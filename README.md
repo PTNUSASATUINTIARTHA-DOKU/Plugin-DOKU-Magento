@@ -1,3 +1,41 @@
+## Payment Channel Options Avalaiblitiy on Magento Plugin: ##
+
+1. Credit Card
+   - Sale
+   - Authorize
+   - Capture
+   - Tokenization
+   - Installment: On & Off Installment
+   - Recurring
+   - Void
+   - Refund: Full and Partial
+   
+2. Doku Wallet
+
+3. Bank Transfer:
+   - BCA 
+   - CIMB Niaga
+   - BRI
+   - Permata
+   - Danamon
+   - BNI
+   - Sinarmas
+   - Mandiri
+   
+4. Internet Banking:
+   - BRI pay
+   - BCA Klikpay
+   - CIMB Clicks
+   - IB Muamalat
+   - IB Permata
+   
+5. Convenience Store: 
+   - Indomaret
+   - Alfamart
+   
+6. Cardless Credit:
+   - Kredivo
+   
 ## Minimum Requirements ##
 This plugin is tested with Magento version 2.3.0
 PHP version 7.2.0 or greater
