@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Doku
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://dokucommerce.com/Doku-Commerce-License.txt
+ *
+ * @category   Doku
+ * @package    Doku_RefundRequest
+ * @author     Extension Team
+ *
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Doku_RefundRequest::request" title="Refund Request by Customer" action="doku_refundrequest/request/index" module="Doku_RefundRequest" sortOrder="90" parent="Doku_Core::doku" resource="Magento_Sales::sales_doku_refund_request"/>
+        <add id="Doku_RefundRequest::label" title="Refund Request Dropdown Options" action="doku_refundrequest/label/index" module="Doku_RefundRequest" sortOrder="100" parent="Doku_Core::doku" resource="Magento_Sales::sales_doku_refund_request_label"/>
+    </menu>
+</config>

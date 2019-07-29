@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<payment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
+    <groups>
+        <group id="offline">
+            <label>Offline Payment Methods</label>
+        </group>
+    </groups>
+    <methods>
+        <method name="permata_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="mandiri_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="sinarmas_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="danamon_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="bca_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="bri_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="cimb_va_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="alfa_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="indomaret_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="cc_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="doku_wallet_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+        <method name="mandiri_clickpay_merchanthosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
+    </methods>
+</payment>

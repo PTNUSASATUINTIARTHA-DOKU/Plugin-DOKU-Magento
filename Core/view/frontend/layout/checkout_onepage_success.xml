@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<body>
+    <referenceContainer name="order.success.additional.info">
+        <block class="Doku\Core\Block\Checkout\Onepage\Success"
+               name="doku.order.success"
+               template="Doku_Core::order/success.phtml"
+               after="-">
+        </block>
+    </referenceContainer>
+</body>

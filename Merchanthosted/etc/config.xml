@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <permata_va_merchanthosted>
+                <title>Permata VA (merchant hosted)</title>
+                <description>Permata VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>89650</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\PermataVaMerchanthosted</model>
+            </permata_va_merchanthosted>
+            <mandiri_va_merchanthosted>
+                <title>Mandiri VA (merchant hosted)</title>
+                <description>Mandiri VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88899</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\MandiriVaMerchanthosted</model>
+            </mandiri_va_merchanthosted>
+            <sinarmas_va_merchanthosted>
+                <title>Sinarmas VA (merchant hosted)</title>
+                <description>Sinarmas VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88900</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\SinarmasVaMerchanthosted</model>
+            </sinarmas_va_merchanthosted>
+            <danamon_va_merchanthosted>
+                <title>Danamon VA (merchant hosted)</title>
+                <description>Danamon VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88910</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\DanamonVaMerchanthosted</model>
+            </danamon_va_merchanthosted>
+            <bca_va_merchanthosted>
+                <title>BCA VA (merchant hosted)</title>
+                <description>BCA VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88911</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\BcaVaMerchanthosted</model>
+            </bca_va_merchanthosted>
+            <bri_va_merchanthosted>
+                <title>BRI VA (merchant hosted)</title>
+                <description>BRI VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88912</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\BriVaMerchanthosted</model>
+            </bri_va_merchanthosted>
+            <cimb_va_merchanthosted>
+                <title>CIMB VA (merchant hosted)</title>
+                <description>CIMB VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>51490</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\CimbVaMerchanthosted</model>
+            </cimb_va_merchanthosted>
+            <alfa_merchanthosted>
+                <title>Alfa Group (merchant hosted)</title>
+                <description>Alfa Group Doku merchant hosted payment method</description>
+                <payment_code_prefix>88888</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\AlfaMerchanthosted</model>
+            </alfa_merchanthosted>
+            <indomaret_merchanthosted>
+                <title>Indomaret (merchant hosted)</title>
+                <description>Indomaret Doku merchant hosted payment method</description>
+                <payment_code_prefix>88xxx</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\IndomaretMerchanthosted</model>
+            </indomaret_merchanthosted>
+            <cc_merchanthosted>
+                <title>Credit Card (merchant hosted)</title>
+                <description>Credit Card merchant hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\CcMerchanthosted</model>
+            </cc_merchanthosted>
+            <doku_wallet_merchanthosted>
+                <title>Doku Wallet (merchant hosted)</title>
+                <description>Doku Wallet merchant hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\DokuWalletMerchanthosted</model>
+            </doku_wallet_merchanthosted>
+            <mandiri_clickpay_merchanthosted>
+                <title>Mandiri Clickpay (merchant hosted)</title>
+                <description>Mandiri Clickpay merchant hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\MandiriClickpayMerchanthosted</model>
+            </mandiri_clickpay_merchanthosted>
+        </payment>
+        <doku_merchanthosted_config>
+            <permata_va_merchanthosted>
+                <title>Permata VA (merchant hosted)</title>
+                <description>Permata VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>89650</payment_code_prefix>
+            </permata_va_merchanthosted>
+            <mandiri_va_merchanthosted>
+                <title>Mandiri VA (merchant hosted)</title>
+                <description>Mandiri VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88899</payment_code_prefix>
+            </mandiri_va_merchanthosted>
+            <sinarmas_va_merchanthosted>
+                <title>Sinarmas VA (merchant hosted)</title>
+                <description>Sinarmas VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88900</payment_code_prefix>
+            </sinarmas_va_merchanthosted>
+            <danamon_va_merchanthosted>
+                <title>Danamon VA (merchant hosted)</title>
+                <description>Danamon VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88910</payment_code_prefix>
+            </danamon_va_merchanthosted>
+            <bca_va_merchanthosted>
+                <title>BCA VA (merchant hosted)</title>
+                <description>BCA VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88911</payment_code_prefix>
+            </bca_va_merchanthosted>
+            <bri_va_merchanthosted>
+                <title>BRI VA (merchant hosted)</title>
+                <description>BRI VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88912</payment_code_prefix>
+            </bri_va_merchanthosted>
+            <cimb_va_merchanthosted>
+                <title>CIMB VA (merchant hosted)</title>
+                <description>CIMB VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>51490</payment_code_prefix>
+            </cimb_va_merchanthosted>
+            <alfa_merchanthosted>
+                <title>Alfa Group (merchant hosted)</title>
+                <description>Alfa Group Doku merchant hosted payment method</description>
+                <payment_code_prefix>88888</payment_code_prefix>
+            </alfa_merchanthosted>
+            <indomaret_merchanthosted>
+                <title>Indomaret (merchant hosted)</title>
+                <description>Indomaret Doku merchant hosted payment method</description>
+                <payment_code_prefix>88xxx</payment_code_prefix>
+            </indomaret_merchanthosted>
+            <cc_merchanthosted>
+                <title>Credit Card (merchant hosted)</title>
+                <description>Credit Card Doku merchant hosted payment method</description>
+            </cc_merchanthosted>
+            <doku_wallet_merchanthosted>
+                <title>Doku Wallet (merchant hosted)</title>
+                <description>Doku Wallet Doku merchant hosted payment method</description>
+            </doku_wallet_merchanthosted>
+            <mandiri_clickpay_merchanthosted>
+                <title>Mandiri Clickay (merchant hosted)</title>
+                <description>Mandiri Clickay Doku merchant hosted payment method</description>
+            </mandiri_clickpay_merchanthosted>
+        </doku_merchanthosted_config>
+    </default>
+</config>

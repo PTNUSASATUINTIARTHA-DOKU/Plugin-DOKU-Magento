@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Doku Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://dokucommerce.com/Doku-Commerce-License.txt
+ *
+ * @category   Doku
+ * @package    Doku_RefundRequest
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Doku Commerce Co. ( http://dokucommerce.com )
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <doku_refundrequest>
+            <doku_refundrequest_config>
+                <popup_title>refund request</popup_title>
+                <title>We are sorry to know that you want a refund, Plase let us know what's wrong?</title>
+                <dropdown_title>Reason for refund</dropdown_title>
+                <option_title>Product is opened</option_title>
+                <detail_title>Faulty or other detail</detail_title>
+            </doku_refundrequest_config>
+            <doku_refundrequest_email_config>
+                <admin_email>dangminhdll@gmail.com</admin_email>
+            </doku_refundrequest_email_config>
+        </doku_refundrequest>
+    </default>
+</config>

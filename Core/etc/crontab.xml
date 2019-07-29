@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="doku_core_check_status_crongroup">
+        <job name="doku_core_check_status_cron" instance="Doku\Core\Cron\Checkstatus" method="execute">
+           <config_path>doku_general_config/check_status/cron_schedule</config_path>
+        </job>
+    </group>
+    <group id="default">
+        <job name="doku_core_cron_voidauth" instance="Doku\Core\Cron\Voidauth" method="execute">
+            <schedule>*/15 * * * *</schedule>
+        </job>
+    </group>
+</config>

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Doku_Merchanthosted/css/doku.css" media="all and (min-width: 1px)"/>
+    </head>
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="renders" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="merchanthosted-permata-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="permata_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-mandiri-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="mandiri_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-sinarmas-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="sinarmas_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-danamon-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="danamon_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-bca-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="bca_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-bri-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="bri_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-cimb-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="cimb_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-alfa" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="alfa_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-indomaret" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="indomaret_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-cc" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-online-payment-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="cc_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-doku-wallet" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-online-payment-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="doku_wallet_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="merchanthosted-mandiri-clickpay" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-online-payment-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="mandiri_clickpay_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

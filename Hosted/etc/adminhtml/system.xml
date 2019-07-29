@@ -1,0 +1,1505 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="cc_hosted" translate="label" type="text" sortOrder="215" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Credit Card (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="cc_authorization_hosted" translate="label" type="text" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Credit Card - Authorization (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="auth_time_expiry" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Time before expired</label>
+                    <comment>in minutes</comment>
+                    <validate>required-entry validate-number</validate>
+                </field>
+                <field id="url_capture" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL Capture</label>
+                    <comment>E.g: https://staging.doku.com/Suite/CaptureRequest</comment>
+                </field>
+                <field id="url_void" translate="label" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL Void</label>
+                    <comment>E.g: https://staging.doku.com/Suite/VoidRequest</comment>
+                </field>
+            </group>
+            <group id="cc_recurring_hosted" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Credit Card Recurring (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="minimum_subtotal" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimum Order Amount</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="flatstatus" translate="label" type="select" sortOrder="222" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>FLAT STATUS</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If amount dynamic the value is FALSE, If amount static(fixed) the value is TRUE</comment>
+                </field>
+                <field id="registeramount_opt" translate="label" type="select" sortOrder="222" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Register Amount</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="registeramount" translate="label" type="text" sortOrder="223" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Register Amount</label>
+                    <comment>Yes => cost 10000.00; No => without this param;</comment>
+                    <validate>required-entry validate-number</validate>
+                    <depends>
+                        <field id="*/*/registeramount_opt">1</field>
+                    </depends>
+                </field>
+                <field id="executedate" translate="label" type="select" sortOrder="224" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Execute Date (Day)</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\ExecuteDate</source_model>
+                    <comment>EXECUTETYPE: DATE, will process every month with Day</comment>
+                </field>
+                <field id="registration_label" translate="label" type="label" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">REGISTRATION PROCESS URL</strong>]]></label>
+                </field>
+
+                <field id="url_recurring_reg" translate="label" type="text" sortOrder="231" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Request</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\ExecuteDate</source_model>
+                    <comment>E.g: http://staging.doku.com/Suite/Receive</comment>
+                </field>
+                <field id="url_registration_notify" translate="label" type="text" sortOrder="232" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="url_registration_redirect" translate="label" type="text" sortOrder="233" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="update_label" translate="label" type="label" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">UPDATE PROCESS URL</strong>]]></label>
+                </field>
+
+                <field id="url_recurring_update" translate="label" type="text" sortOrder="241" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Request</label>
+                    <comment>E.g: http://staging.doku.com/Suite/RecurUpdateCard</comment>
+                </field>
+                <field id="url_recurring_update_notify" translate="label" type="text" sortOrder="242" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="url_recurring_update_redirect" translate="label" type="text" sortOrder="243" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="recurring_label" translate="label" type="label" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">RECURRING PROCESS URL</strong>]]></label>
+                </field>
+
+                <field id="url_recurring_getamount" translate="label" type="text" sortOrder="251" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Amount</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="url_recurring_notify" translate="label" type="text" sortOrder="252" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+
+                <field id="other_label" translate="label" type="label" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">OTHER PROCESS</strong>]]></label>
+                </field>
+
+                <field id="url_recurring_unsubscribe" translate="label" type="text" sortOrder="261" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ubsubscribe</label>
+                    <comment>E.g: http://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</comment>
+                </field>
+                <field id="url_recurring_status" translate="label" type="text" sortOrder="262" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Recurring Status</label>
+                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</comment>
+                </field>
+                <field id="url_recurring_trans" translate="label" type="text" sortOrder="263" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Recurring Transaction</label>
+                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurTransaction</comment>
+                </field>
+            </group>
+            <group id="alfa_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Alfa Group (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="bca_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BCA VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="doku_wallet_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Doku Wallet (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="indomaret_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Indomaret (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="mandiri_clickpay_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mandiri Clickpay (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="ib_danamon_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ib Danamon (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="ib_permata_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ib Permata (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="ib_muamalat_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ib Muamalat (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="epay_bri_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Epay BRI (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="cimb_click_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CIMB click (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="permata_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Permata VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="danamon_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Danamon VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="mandiri_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mandiri VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="bri_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BRI VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="cimb_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CIMB VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="kredivo_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Kredivo (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="sinarmas_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sinarmas VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
+            <group id="doku_hosted_payment" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>All Payment (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="is_opt_dropdown" translate="label" type="select" sortOrder="231" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display as Dropdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+
+        <section id="doku_hosted_config" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Doku hosted Configuration</label>
+            <tab>doku_config</tab>
+            <resource>Doku_Core::Doku_payment</resource>
+            <group id="cc_hosted" translate="label" type="text" sortOrder="215" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Credit Card (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/cc_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/cc_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/cc_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/cc_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cc_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/cc_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cc_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="cc_authorization_hosted" translate="label" type="text" sortOrder="215" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Credit Card Authorization (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/cc_authorization_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/cc_authorization_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/cc_authorization_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/cc_authorization_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cc_authorization_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/cc_authorization_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cc_authorization_hosted/admin_fee_type</config_path>
+                </field>
+                <field id="auth_time_expiry" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Time before expired</label>
+                    <config_path>payment/cc_authorization_hosted/auth_time_expiry</config_path>
+                </field>
+            </group>
+            <group id="cc_recurring_hosted" translate="label" type="text" sortOrder="216" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Credit Card Recurring (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/cc_recurring_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/cc_recurring_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="222" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="minimum_subtotal" translate="label" type="text" sortOrder="223" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minimum Order Amount</label>
+                    <config_path>payment/cc_recurring_hosted/minimum_subtotal</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="224" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/cc_recurring_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="225" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cc_recurring_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="226" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/cc_recurring_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="227" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cc_recurring_hosted/admin_fee_type</config_path>
+                </field>
+                <field id="flatstatus" translate="label" type="select" sortOrder="228" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Flat Status</label>
+                    <config_path>payment/cc_recurring_hosted/flatstatus</config_path>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If amount dynamic the value is FALSE, If amount static(fixed) the value is TRUE</comment>
+                </field>
+                <field id="registeramount_opt" translate="label" type="select" sortOrder="229" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Register Amount</label>
+                    <config_path>payment/cc_recurring_hosted/registeramount_opt</config_path>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="registeramount" translate="label" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Register Amount</label>
+                    <validate>required-entry validate-number</validate>
+                    <config_path>payment/cc_recurring_hosted/registeramount</config_path>
+                    <depends>
+                        <field id="*/*/registeramount_opt">1</field>
+                    </depends>
+                </field>
+                <field id="executedate" translate="label" type="select" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Execute Date (Day)</label>
+                    <config_path>payment/cc_recurring_hosted/executedate</config_path>
+                    <source_model>Doku\Hosted\Model\Config\Source\ExecuteDate</source_model>
+                    <comment>EXECUTETYPE: DATE, will process every month with Day</comment>
+                </field>
+                <field id="registration_label" translate="label" type="label" sortOrder="231" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">REGISTRATION PROCESS URL</strong>]]></label>
+                </field>
+                <field id="url_recurring_reg" translate="label" type="text" sortOrder="232" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Request</label>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_reg</config_path>
+                    <comment>E.g: http://staging.doku.com/Suite/Receive</comment>
+                </field>
+                <field id="url_registration_notify" translate="label" type="text" sortOrder="233" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                    <config_path>payment/cc_recurring_hosted/url_registration_notify</config_path>
+                </field>
+                <field id="url_registration_redirect" translate="label" type="text" sortOrder="234" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                    <config_path>payment/cc_recurring_hosted/url_registration_redirect</config_path>
+                </field>
+                <field id="update_label" translate="label" type="label" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">UPDATE PROCESS URL</strong>]]></label>
+                </field>
+                <field id="url_recurring_update" translate="label" type="text" sortOrder="241" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Request</label>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_update</config_path>
+                    <comment>E.g: http://staging.doku.com/Suite/RecurUpdateCard</comment>
+                </field>
+                <field id="url_recurring_update_notify" translate="label" type="text" sortOrder="242" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_update_notify</config_path>
+                </field>
+                <field id="url_recurring_update_redirect" translate="label" type="text" sortOrder="243" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_update_redirect</config_path>
+                </field>
+
+                <field id="recurring_label" translate="label" type="label" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">RECURRING PROCESS URL</strong>]]></label>
+                </field>
+                <field id="url_recurring_getamount" translate="label" type="text" sortOrder="251" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Amount</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_getamount</config_path>
+                </field>
+                <field id="url_recurring_notify" translate="label" type="text" sortOrder="251" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notify</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_notify</config_path>
+                </field>
+
+                <field id="other_label" translate="label" type="label" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[<strong style="text-decoration: underline">OTHER PROCESS</strong>]]></label>
+                </field>
+                <field id="url_recurring_unsubscribe" translate="label" type="text" sortOrder="261" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Unsubscribe</label>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_unsubscribe</config_path>
+                    <comment>E.g: http://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</comment>
+                </field>
+                <field id="url_recurring_status" translate="label" type="text" sortOrder="262" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Recurring Status</label>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_status</config_path>
+                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</comment>
+                </field>
+                <field id="url_recurring_trans" translate="label" type="text" sortOrder="263" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Get Recurring Transaction</label>
+                    <config_path>payment/cc_recurring_hosted/url_recurring_trans</config_path>
+                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurTransaction</comment>
+                </field>
+            </group>
+            <group id="alfa_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Alfa Group (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/alfa_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/alfa_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/alfa_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/alfa_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/alfa_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/alfa_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/alfa_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="bca_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BCA VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/bca_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/bca_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/bca_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/bca_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/bca_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/bca_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/bca_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="doku_wallet_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Doku Wallet (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/doku_wallet_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/doku_wallet_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/doku_wallet_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/doku_wallet_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/doku_wallet_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/doku_wallet_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/doku_wallet_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="indomaret_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Indomaret (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/indomaret_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/indomaret_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/indomaret_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/indomaret_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/indomaret_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/indomaret_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/indomaret_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="mandiri_clickpay_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mandiri Clickpay (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/mandiri_clickpay_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/mandiri_clickpay_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/mandiri_clickpay_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/mandiri_clickpay_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/mandiri_clickpay_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/mandiri_clickpay_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/mandiri_clickpay_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="ib_danamon_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ib Danamon (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/ib_danamon_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/ib_danamon_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/ib_danamon_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/ib_danamon_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/ib_danamon_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/ib_danamon_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/ib_danamon_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="ib_permata_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ib Permata (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/ib_permata_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/ib_permata_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/ib_permata_hosted/description</config_path>
+                </field>
+                 <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/ib_permata_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/ib_permata_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/ib_permata_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/ib_permata_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="ib_muamalat_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ib Muamalat (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/ib_muamalat_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/ib_muamalat_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/ib_muamalat_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/ib_muamalat_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/ib_muamalat_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/ib_muamalat_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/ib_muamalat_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="epay_bri_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Epay BRI (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/epay_bri_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/epay_bri_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/epay_bri_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/epay_bri_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/epay_bri_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/epay_bri_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/epay_bri_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="cimb_click_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CIMB click (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/cimb_click_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/cimb_click_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/cimb_click_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/cimb_click_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cimb_click_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/cimb_click_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cimb_click_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="permata_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Permata VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/permata_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/permata_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/permata_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/permata_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/permata_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/permata_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/permata_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="danamon_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Danamon VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/danamon_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/danamon_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/danamon_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/danamon_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/danamon_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/danamon_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/danamon_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="mandiri_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mandiri VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/mandiri_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/mandiri_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/mandiri_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/mandiri_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/mandiri_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/mandiri_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/mandiri_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="bri_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BRI VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/bri_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/bri_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/bri_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/bri_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/bri_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/bri_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/bri_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="cimb_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>CIMB VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/cimb_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/cimb_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/cimb_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/cimb_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cimb_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/cimb_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/cimb_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="kredivo_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Kredivo (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/kredivo_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/kredivo_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/kredivo_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/kredivo_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/kredivo_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/kredivo_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/kredivo_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="sinarmas_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sinarmas VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/sinarmas_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/sinarmas_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/sinarmas_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/sinarmas_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/sinarmas_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/sinarmas_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/sinarmas_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
+            <group id="doku_hosted_payment" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>All Payment (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/doku_hosted_payment/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/doku_hosted_payment/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/doku_hosted_payment/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/doku_hosted_payment/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/doku_hosted_payment/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/doku_hosted_payment/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/doku_hosted_payment/admin_fee_type</config_path>
+                </field>
+                <field id="is_opt_dropdown" translate="label" type="select" sortOrder="231" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display as Dropdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/doku_hosted_payment/is_opt_dropdown</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

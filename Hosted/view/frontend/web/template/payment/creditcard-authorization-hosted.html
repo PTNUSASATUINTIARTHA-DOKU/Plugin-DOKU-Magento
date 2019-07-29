@@ -1,0 +1,48 @@
+
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
+        <label data-bind="attr: {'for': getCode()}" class="label"><span data-bind="text: getTitle()"></span></label>
+    </div>
+
+    <div class="payment-method-content rk1">
+        <div data-bind="html: getDescription()"></div><br>
+        <div id="isntallment" data-bind="if: isInstallmentActive() && isInstallmentable()">
+            <form id="installment-form">
+                <div class="field">
+                    <label for="bank" class="label" id="bank-label"><span>Please select bank for installment</span></label>
+                    <select class="select" id="bank" name="bank" data-bind="event: {change : getTennors}">
+                        <option value="" selected="selected">-- Select Bank --</option>
+                        <!-- ko foreach: getInstallmentBank() -->
+                        <option data-bind="value: $data, text: $data"></option>
+                        <!--/ko-->
+                    </select>
+                </div>
+                <div class="field" id="tennor">
+                    <label for="tennors" class="label" id="tennors-label"><span>Please select tennor</span></label>
+                </div>
+            </form>
+        </div>
+        <br>
+        <form id="credit-card-authorization-hosted" action="" method="post"></form>
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="checkout-agreements-block">
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="click: placeOrder, enable: (getCode() == isChecked())">
+                    <span data-bind="text: 'Place Order & Pay'">Place Order & Pay</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

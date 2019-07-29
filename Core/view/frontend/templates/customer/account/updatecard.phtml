@@ -1,0 +1,19 @@
+<p><?php echo __("Redirecting...");?></p>
+<?php
+$formData = $block->getFormData();
+?>
+
+<form method="POST" action="<?php echo $block->getDokuUpdateCardUrl() ?>" id="updatecard-form">
+    <?php foreach($formData as $field => $value):?>
+        <input type="hidden" value="<?php echo $value;?>" name="<?php echo $field;?>" />
+    <?php endforeach; ?>
+
+</form>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "dokucorerequire": "test"
+        }
+    }
+</script>

@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="doku_config" translate="label" sortOrder="100" class="doku-payment-tab">
+            <label><![CDATA[Doku]]></label>
+        </tab>
+        <section id="doku_general_config" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>General Configuration</label>
+            <tab>doku_config</tab>
+            <resource>Doku_Core::Doku_payment</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="mall_id_production" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mall ID / Store ID (Production)</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="mall_id_development" translate="label" type="text" sortOrder="101" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mall ID / Store ID (Development)</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="chain_id_production" translate="label" type="text" sortOrder="102" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Chain ID (Production)</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="chain_id_development" translate="label" type="text" sortOrder="103" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Chain ID (Development)</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="shared_key_production" translate="label" type="text" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Shared Key (Production)</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="shared_key_development" translate="label" type="text" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Shared Key (Development)</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="environment" translate="label" type="select" sortOrder="106" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Environment</label>
+                    <source_model>Doku\Core\Model\Config\Source\Environment</source_model>
+                </field>
+                <field id="expiry" translate="label" type="text" sortOrder="106" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Expiry</label>
+                    <comment>Expiry time in minute, if you set this field with empty value, the expiry time will be set with default value 360</comment>
+                </field>
+                <field id="sender_mail" translate="label" type="text" sortOrder="107" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender Address</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="sender_name" translate="label" type="text" sortOrder="108" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender Name</label>
+                    <comment>*Required Field</comment>
+                </field>
+                <field id="sender_mail_bcc" translate="label" type="text" sortOrder="109" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>BCC Email Address</label>
+                </field>
+                <field id="notify_url" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notfy URL</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="identify_url" translate="label" type="text" sortOrder="111" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Identify URL</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="review_url" translate="label" type="text" sortOrder="112" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Review URL</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+                <field id="redirect_url" translate="label" type="text" sortOrder="113" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect URL</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
+                </field>
+            </group>
+            <group id="installment" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Installment</label>
+                <field id="active_installment" translate="label" type="select" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Active Installment</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="mall_id" translate="label" type="text" sortOrder="301" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mall ID / Merchant ID for off us Installment</label>
+                    <comment>required for off us installment</comment>
+                    <depends>
+                        <field id="payment/installment/active_installment">1</field>
+                    </depends>
+                </field>
+                <field id="shared_key" translate="label" type="text" sortOrder="302" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Shared Key for off us Installment</label>
+                    <comment>required for off us installment</comment>
+                    <depends>
+                        <field id="payment/installment/active_installment">1</field>
+                    </depends>
+                </field>
+                <field id="mall_id_development" translate="label" type="text" sortOrder="303" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Mall ID / Merchant ID for off us Installment (development)</label>
+                    <comment>required for off us installment</comment>
+                    <depends>
+                        <field id="payment/installment/active_installment">1</field>
+                    </depends>
+                </field>
+                <field id="shared_key_development" translate="label" type="text" sortOrder="304" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Shared Key for off us Installment (development)</label>
+                    <comment>required for off us installment</comment>
+                    <depends>
+                        <field id="payment/installment/active_installment">1</field>
+                    </depends>
+                </field>
+                <field id="installment_configuration" translate="label" sortOrder="305" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Instalment Configuration</label>
+                    <frontend_model>Doku\Core\Block\System\Config\Form\Field\InstallmentConfiguration</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>required for installment</comment>
+                    <depends>
+                        <field id="payment/installment/active_installment">1</field>
+                    </depends>
+                </field>
+                <field id="amount_above" translate="label" type="text" sortOrder="306" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show payment if subtotal greater than</label>
+                    <depends>
+                        <field id="payment/installment/active_installment">1</field>
+                    </depends>
+                </field>
+            </group>
+             <group id="edu" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>EDU Configuration</label>
+                <field id="active_edu" translate="label" type="select" sortOrder="306" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Active EDU</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="payment_channels_edu" translate="label" type="multiselect" sortOrder="307" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment channels for EDU</label>
+                    <source_model>Doku\Core\Model\Config\Source\PaymentEdu</source_model>
+                    <depends>
+                        <field id="doku_general_config/edu/active_edu">1</field>
+                    </depends>
+                </field>
+            </group>
+             <group id="whitelist" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Whitelist</label>
+                <field id="ip_whitelist" translate="label" type="text" sortOrder="308" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>IP Whitelist</label>
+                    <comment>Seperate by comma, ex: 145.00.35.10,145.00.36.12</comment>
+                </field>
+            </group>
+            <group id="tokenization" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Tokenization</label>
+                <field id="active_tokenization" translate="label" type="select" sortOrder="306" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Active Tokenization</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="check_status" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Cron Check Status</label>
+                <field id="active_cron_checksatus" translate="label" type="select" sortOrder="306" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Active Cron Check Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cron_schedule" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Cron Schedule</label>
+                    <comment><![CDATA[
+                                <pre>
+                                * * * * *
+                                | | | | |
+                                | | | | +---- Day of the Week   (range: 1-7, 1 standing for Monday)
+                                | | | +------ Month of the Year (range: 1-12)
+                                | | +-------- Day of the Month  (range: 1-31)
+                                | +---------- Hour              (range: 0-23)
+                                +------------ Minute            (range: 0-59)
+                                Example: 0 0 * * * Daily at midnight
+                                </pre>
+                            ]]></comment>
+                    <depends><field id="doku_general_config/check_status/active_cron_checksatus">1</field></depends>
+                </field>
+            </group>
+            <group id="js_merchant_hosted" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>JS Merchant Hosted</label>
+                <field id="development_url" translate="label" type="text" sortOrder="501" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>JS URL (Development)</label>
+                </field>
+                <field id="production_url" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>JS URL (Production)</label>
+                </field>
+            </group>
+        </section>
+        
+        <section id="payment">
+            <group id="bca_klikpay_core" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BCA klikpay</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Amount</label>                
+                </field>                
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model>                
+                </field>                
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee</label>                
+                </field>                
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model>                
+                </field> 
+            </group>
+            <group id="klik_bca_core" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Klik BCA</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Amount</label>                
+                </field>                
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model>                
+                </field>                
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee</label>                
+                </field>                
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model>                
+                </field> 
+            </group>   
+        </section>
+        
+        <section id="doku_bca_payment_config" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Doku - BCA Configuration</label>
+            <tab>doku_config</tab>
+            <resource>Doku_Core::Doku_payment</resource>
+            <group id="bca_klikpay_core" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BCA klikpay</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/bca_klikpay_core/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/bca_klikpay_core/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/bca_klikpay_core/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Amount</label>
+                    <config_path>payment/bca_klikpay_core/disc_amount</config_path>                
+                </field>                
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model> 
+                    <config_path>payment/bca_klikpay_core/disc_type</config_path>                 
+                </field>                
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee</label>    
+                    <config_path>payment/bca_klikpay_core/admin_fee</config_path>             
+                </field>                
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model> 
+                    <config_path>payment/bca_klikpay_core/admin_fee_type</config_path>                  
+                </field>
+            </group>
+            <group id="klik_bca_core" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Klik BCA</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/klik_bca_core/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/klik_bca_core/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/klik_bca_core/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Amount</label>
+                    <config_path>payment/klik_bca_core/disc_amount</config_path>                
+                </field>                
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model> 
+                    <config_path>payment/klik_bca_core/disc_type</config_path>                 
+                </field>                
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee</label>    
+                    <config_path>payment/klik_bca_core/admin_fee</config_path>             
+                </field>                
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee Type</label>                    
+                    <source_model>Doku\Core\Model\Config\Source\PercentageSelect</source_model> 
+                    <config_path>payment/klik_bca_core/admin_fee_type</config_path>                  
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

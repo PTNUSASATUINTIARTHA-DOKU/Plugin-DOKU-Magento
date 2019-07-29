@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Doku_Core::doku" sortOrder="80" title="Doku Payment" resource="Doku_Core::Doku_payment" module="Doku_Core" />
+        <add id="Doku_Core::config" title="Ganeral Configuration" module="Doku_Core" sortOrder="10" resource="Doku_Core::Doku_payment" parent="Doku_Core::doku" action="adminhtml/system_config/edit/section/doku_general_config/"/>
+        <add id="Doku_Hosted::config" title="Doku Hosted Configuration" module="Doku_Core" sortOrder="11" resource="Doku_Core::Doku_payment" parent="Doku_Core::doku" action="adminhtml/system_config/edit/section/doku_hosted_config/"/>
+        <add id="Doku_Bca::config" title="Doku - BCA Configuration" module="Doku_Core" sortOrder="12" resource="Doku_Core::Doku_payment" parent="Doku_Core::doku" action="adminhtml/system_config/edit/section/doku_bca_payment_config/"/>
+        <add id="Doku_Merchanthosted::config" title="Merchant Hosted Configuration" module="Doku_Core" sortOrder="13" resource="Doku_Core::Doku_payment" parent="Doku_Core::doku" action="adminhtml/system_config/edit/section/doku_merchanthosted_config/"/>
+        <add id="Doku_Core::manage_recurring" title="Recurring Registrations" module="Doku_Core" sortOrder="20" parent="Doku_Core::doku" action="dokucore/recurring/index" resource="Doku_Core::dokucore_recurring_index" />
+    </menu>
+</config>

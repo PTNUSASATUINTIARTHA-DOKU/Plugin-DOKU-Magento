@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="renders" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="hosted-cc" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="cc_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-authorization-cc" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="cc_authorization_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-recurring-cc" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="cc_recurring_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-alfa" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="alfa_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-bca-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="bca_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-doku-wallet" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="doku_wallet_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-indomaret" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="indomaret_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-mandiri-clickpay" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="mandiri_clickpay_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-ib-danamon" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="ib_danamon_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-ib-permata" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="ib_permata_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-ib-muamalat" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="ib_muamalat_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-epay-bri" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="epay_bri_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-cimb-click" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="cimb_click_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-permata-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="permata_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-danamon-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="danamon_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-mandiri-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="mandiri_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-bri-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="bri_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-cimb-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="cimb_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-kredivo" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="kredivo_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-sinarmas" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="sinarmas_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-all-payment" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="doku_hosted_payment" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Doku
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://dokucommerce.com/Doku-Commerce-License.txt
+ *
+ *
+ * @package    Doku_RefundRequest
+ * @author     Extension Team
+ *
+ *
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="content">
+            <block class="Doku\RefundRequest\Block\Adminhtml\Request\Edit" name="request_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Doku\RefundRequest\Block\Adminhtml\Request\Edit\Tabs" name="request_edit_tabs">
+                <block class="Doku\RefundRequest\Block\Adminhtml\Request\Edit\Tab\Request" name="request_edit_tab_request"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">request_edit_tab_request</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

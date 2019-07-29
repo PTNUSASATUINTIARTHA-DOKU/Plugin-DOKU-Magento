@@ -1,0 +1,69 @@
+
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
+        <label data-bind="attr: {'for': getCode()}" class="label"><span data-bind="text: getTitle()"></span></label>
+    </div>
+
+    <div class="payment-method-content rk1">
+        <div data-bind="html: getDescription()"></div>
+
+            <!-- ko if: showBankTransfer() -->
+            <input type="radio"
+                   name="doku-all-group"
+                   class="radio"
+                   value="doku-all-transfer"
+                   id="doku-all-transfer",
+                   data-bind="click: showDokuAllTransfer"
+                />
+            <label for="doku-all-transfer" class="label"><span>Bank Transfer</span></label>
+            <br />
+
+            <div id="doku-all-transfer-channel" style="display: none;">
+            <select name="PAYMENTCHANNEL-TRANSFER" id="doku-all-payment-hosted-options-transfer" data-bind="html: getTransferOptions()"></select>
+            <br />
+            </div>
+            <br />
+            <!-- /ko -->
+
+            <!-- ko if: showInternetBanking() -->
+            <input type="radio"
+                   name="doku-all-group"
+                   class="radio"
+                   value="doku-all-ib"
+                   id="doku-all-ib"
+                   data-bind="click: showDokuAllIb"
+            />
+            <label for="doku-all-ib" class="label"><span>Internet Banking</span></label>
+
+            <br />
+            <div id="doku-all-ib-channel" style="display: none;">
+                <select name="PAYMENTCHANNEL-IB" id="doku-all-payment-hosted-options-ib" data-bind="html: getIbOptions()"></select>
+            </div>
+            <br /><br />
+            <!-- /ko -->
+
+
+        <form id="doku-all-payment-hosted" action="" method="post">
+        </form>
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="checkout-agreements-block">
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="click: placeOrder, enable: (getCode() == isChecked())">
+                    <span data-bind="text: 'Place Order & Pay'">Place Order & Pay</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

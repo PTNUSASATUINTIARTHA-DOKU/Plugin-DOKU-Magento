@@ -1,0 +1,135 @@
+<?php
+/**
+ * Doku Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://dokucommerce.com/Doku-Commerce-License.txt
+ *
+ * @category   Doku
+ * @package    Doku_RefundRequest
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Doku Commerce Co. ( http://dokucommerce.com )
+ *
+ */
+
+/**
+ * @var $block \Doku\RefundRequest\Block\Label
+ */
+?>
+<?php // @codingStandardsIgnoreFile ?>
+<?php
+
+    $refundStatus = json_encode($block->getRefundStatus()->getData());
+    $orderRefund = json_encode($block->getOrderRefund());
+    $orders = json_encode($block->getOrderCollectionByCutomerId());
+?>
+
+<?php if ($block->getConfigEnableModule()) { ?>
+    <div id="doku-refund-modal" style="display: none;">
+        <form action="<?php echo $block->getFormUrl(); ?>refundrequest/order/index" class="form refund" id="doku-refund-form" method="post" enctype="multipart/form-data"
+              data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>"
+              data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset">
+                <div class="control">
+                    <?php $title = $block->getTitle(); ?>
+                    <p><?php echo $title ? $title : __("We are sorry to know that you want a refund. Please let us know what's wrong"); ?></p>
+                </div>
+                <div class="control">
+                    <input type="hidden" name="doku-refund-order-id" value="" class="doku-refund-oder-id">
+                    <?php $formKey = $block->getFormKey()?>
+                    <input type="hidden" name="form_key" value="<?= $block->escapeHtml($formKey) ?>" class="form_key">
+                </div>
+                <?php if ($block->getConfigEnableDropdown()) : ?>
+                    <div class="field required">
+                        <?php $dropdownTitle = $block->getDropdownTitle(); ?>
+                        <label class="label" for="label"><span><?php echo $dropdownTitle ? $dropdownTitle : __('Reason for refund'); ?></span></label>
+                        <div class="control">
+                            <label>
+                                <select name="doku-option">
+                                    <?php $a = $block->getLabel(); ?>
+                                        <?php foreach ($a as $value) { ?>
+                                            <option><?php echo $value->getData('request_label'); ?></option>
+                                    <?php } ?>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="field required">
+                    <label class="label" for="label"><span><?php echo __('Refund type'); ?></span></label>
+                    <div class="control">
+                        <label>
+                            <input type="radio" name="doku-refund-type" value="refund_full" required="required">
+                            <span><?= $block->escapeHtml(__('Refund Full')) ?></span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="doku-refund-type" value="refund_partial">
+                            <span><?= $block->escapeHtml(__('Refund Partial')) ?></span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="doku-refund-type" value="return_stock">
+                            <span><?= $block->escapeHtml(__('Return Items')) ?></span>
+                        </label>
+
+                    </div>
+                </div>
+                <?php if ($block->getConfigEnableOption()) : ?>
+                    <div class="field required">
+                        <?php $optionTitle = $block->getOptionTitle(); ?>
+                        <label class="label" for="label"><span><?php echo $optionTitle ? $optionTitle : __('Product is opened'); ?></span></label>
+                        <div class="control">
+                            <label>
+                                <input type="radio" name="doku-radio" value="1" required="required">
+                            </label><span><?= $block->escapeHtml(__('Yes')) ?></span>
+                            <label>
+                                <input type="radio" name="doku-radio" value="0">
+                            </label><span><?= $block->escapeHtml(__('No')) ?></span>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="field required">
+                    <?php $detailTitle = $block->getDetailTitle(); ?>
+                    <label class="label" for="label"><span><?php echo $detailTitle ? $detailTitle : __('Faulty or other detail'); ?></span></label>
+                    <div class="control">
+                        <label>
+                            <textarea class="doku-refund-reason input-text" name="doku-refund-reason" data-validate="{required:true}"></textarea>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="label"><span><?php echo __('Attachment'); ?></span></label>
+                    <div class="control">
+                        <label>
+                            <input type="file" name="doku-attachment" />
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div id="message"></div>
+    <?php $poptupTitle = $block->getPopupModuleTitle();?>
+    <script type="text/x-magento-init">
+        {
+            "*":
+                {
+                    "Doku_RefundRequest/js/get-oder": {
+                        "orderRefund" : <?php echo $orderRefund; ?>,
+                        "dokuUrl" : "<?php echo $block->getBaseUrl(); ?>",
+                        "dokuPopupTitle" : "<?php echo $poptupTitle ? $poptupTitle : __('Refund Request');?>",
+                        "dataOrder" : <?php echo $refundStatus; ?>,
+                        "orders": <?php echo $orders ?>
+                    }
+                }
+
+        }
+    </script>
+<?php   } ?>

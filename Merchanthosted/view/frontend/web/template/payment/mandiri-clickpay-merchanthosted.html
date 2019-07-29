@@ -1,0 +1,101 @@
+
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()" />
+        <label data-bind="attr: {'for': getCode()}" class="label"><span data-bind="text: getTitle()"></span></label>
+    </div>
+
+    <div class="payment-method-content rk1">
+        <div data-bind="html: getDescription()"></div><br>
+        
+<!--        <form method="POST" id="payment-form"  data-bind="attr: {'action': getChargingUrl()}">
+            <div doku-div='form-payment'>
+                <input id="doku-token" name="doku-token" type="hidden" />
+                <input id="doku-pairing-code" name="doku-pairing-code" type="hidden" />
+            </div>
+       </form>-->
+
+<style id="custom-style"></style>
+       
+<div id="form-request" style="display : none;">
+    <form method="post" data-bind="attr: {'action': getChargingUrl()}">
+        <div id="mandiriclickpay" class="channel"> <!-- mandiri clickpay -->
+            <div class="logo-payment-channel right-paychan mandiriclickpay"></div>
+
+            <div class="styled-input">
+                <input type="text" id="cc_number" name="cc_number" class="cc-number" required style="border:1px solid red; padding: 0px 2%;" />
+                <label style="color: #d10000">Enter Card Number Here...</label>
+            </div>
+            <div class="desc">
+                Pastikan bahwa kartu Anda telah diaktivasi melalui layanan mandiri Internet Banking Bank Mandiri pada menu Authorized Payment agar dapat melakukan transaksi Internet Payment.
+            </div>
+            <div class="line"></div>
+            <div class="token">
+                <img src="https://pay.doku.com/doku-js/assets/images/token.png" alt="" class="fleft" />
+                <div class="text-token desc fright">
+                    Gunakan token pin mandiri untuk bertransaksi. Nilai yang dimasukkan pada token Anda (Metode APPLI 3)
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="list-chacode">
+                <ul style="list-style: none none;">
+                    <li>
+                        <div class="text-chacode">Challenge Code 1</div>
+                        <input type="text" id="CHALLENGE_CODE_1" name="CHALLENGE_CODE_1" placeholder="Please Enter Card Number First" readonly="true" style="border-radius: 5px;" required/>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="text-chacode">Challenge Code 2</div>
+                        <div class="num-chacode" id="amount-label"></div>
+                        <input type="hidden" id="CHALLENGE_CODE_2" name="CHALLENGE_CODE_2" value=""/> 
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="text-chacode">Challenge Code 3</div>
+                        <div class="num-chacode" id="challenge_div_3"></div>
+                        <input type="hidden" name="CHALLENGE_CODE_3" id="CHALLENGE_CODE_3" value=""/>
+                        <div class="clear"></div>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="validasi">
+                <div class="styled-input fleft width50">
+                    <input type="text" required name="response_token" style="width: 50%; padding: 0px 2%;">
+                    <label>Token Response</label>
+                </div>
+                <div class="clear"></div>
+                <span title="Enter token code that generated here" class="tooltip tolltips-wallet">
+                    <span title="More"><img src="https://pay.doku.com/doku-js/assets/images/icon-help.png" alt="" style="margin: 7px 0 0 10px;" /></span>
+                </span>
+            </div>
+            <input type="hidden" id="doku_invoice_no" name="doku_invoice_no" required value="">
+            <input type="hidden" id="is_not_ajax" name="is_not_ajax" value="1">
+            <input type="submit" value="Process Payment" class="default-btn">
+        </div><!-- mandiri clickpay -->
+    </form>
+</div>
+        
+        <br>
+        <form id="mandiri-clickpay-merchanthosted" action="" method="post"></form>
+        <div id="billing-address-section" class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="checkout-agreements-block">
+        </div>
+        <div id="place-order-section" class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="click: placeOrder, enable: (getCode() == isChecked())">
+                    <span data-bind="text: 'Place Order & Pay'">Place Order & Pay</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

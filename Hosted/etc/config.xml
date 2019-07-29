@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <cc_hosted>
+                <title>Credit Card (dokuhosted)</title>
+                <description>Credit Card Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\CreditCardHosted</model>
+            </cc_hosted>
+            <cc_authorization_hosted>
+                <title>Credit Card Authorization (dokuhosted)</title>
+                <description>Credit Card Authorization Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\CreditCardAuthorizationHosted</model>
+                <auth_time_expiry>60</auth_time_expiry>
+            </cc_authorization_hosted>
+            <cc_recurring_hosted>
+                <title>Credit Card Recurring (dokuhosted)</title>
+                <description>Credit Card Recurring Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\CreditCardRecurringHosted</model>
+                <url_recurring_reg>http://staging.doku.com/Suite/Receive</url_recurring_reg>
+                <url_recurring_update>http://staging.doku.com/Suite/RecurUpdateCard</url_recurring_update>
+                <url_recurring_unsubscribe>http://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</url_recurring_unsubscribe>
+                <url_recurring_status>http://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</url_recurring_status>
+                <url_recurring_trans>http://staging.doku.com/AccountBilling/DoGetRecurTransaction</url_recurring_trans>
+            </cc_recurring_hosted>
+            <alfa_hosted>
+                <title>Alfa Group (dokuhosted)</title>
+                <description>Alfa Group Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\AlfaHosted</model>
+            </alfa_hosted>
+            <bca_va_hosted>
+                <title>BCA VA (dokuhosted)</title>
+                <description>BCA VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\BcaVaHosted</model>
+            </bca_va_hosted>
+            <doku_wallet_hosted>
+                <title>Doku Wallet (dokuhosted)</title>
+                <description>Doku Wallet Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\DokuWalletHosted</model>
+            </doku_wallet_hosted>
+            <indomaret_hosted>
+                <title>Indomaret (dokuhosted)</title>
+                <description>Indomaret Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\IndomaretHosted</model>
+            </indomaret_hosted>
+            <mandiri_clickpay_hosted>
+                <title>Mandiri Clickpay (dokuhosted)</title>
+                <description>Mandiri Clickpay Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\MandiriClickpayHosted</model>
+            </mandiri_clickpay_hosted>
+            <ib_danamon_hosted>
+                <title>Danamon Internet Banking (dokuhosted)</title>
+                <description>Danamon Internet Banking Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\IbDanamonHosted</model>
+            </ib_danamon_hosted>
+            <ib_permata_hosted>
+                <title>Permata Internet Banking (dokuhosted)</title>
+                <description>Permata Internet Banking Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\IbPermataHosted</model>
+            </ib_permata_hosted>
+            <ib_muamalat_hosted>
+                <title>Muamalat Internet Banking (dokuhosted)</title>
+                <description>Muamalat Internet Banking Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\IbMuamalatHosted</model>
+            </ib_muamalat_hosted>
+            <epay_bri_hosted>
+                <title>ePay BRI (dokuhosted)</title>
+                <description>ePay BRI Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\EpayBriHosted</model>
+            </epay_bri_hosted>
+            <cimb_click_hosted>
+                <title>CIMB Click (dokuhosted)</title>
+                <description>CIMB Click Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\CimbClickHosted</model>
+            </cimb_click_hosted>
+            <permata_va_hosted>
+                <title>Permata VA (dokuhosted)</title>
+                <description>Permata VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\PermataVaHosted</model>
+            </permata_va_hosted>
+            <danamon_va_hosted>
+                <title>Danamon VA (dokuhosted)</title>
+                <description>Danamon VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\DanamonVaHosted</model>
+            </danamon_va_hosted>
+            <mandiri_va_hosted>
+                <title>Mandiri VA (dokuhosted)</title>
+                <description>Mandiri VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\MandiriVaHosted</model>
+            </mandiri_va_hosted>
+            <bri_va_hosted>
+                <title>BRI VA (dokuhosted)</title>
+                <description>BRI VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\BriVaHosted</model>
+            </bri_va_hosted>
+            <cimb_va_hosted>
+                <title>CIMB VA (dokuhosted)</title>
+                <description>CIMB VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\CimbVaHosted</model>
+            </cimb_va_hosted>
+            <kredivo_hosted>
+                <title>Kredivo (dokuhosted)</title>
+                <description>Kredivo Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\KredivoHosted</model>
+            </kredivo_hosted>
+            <sinarmas_va_hosted>
+                <title>Sinarmas VA (dokuhosted)</title>
+                <description>Sinarmas VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\SinarmasVaHosted</model>
+            </sinarmas_va_hosted>
+            <doku_hosted_payment>
+                <title>All Payment (dokuhosted)</title>
+                <description>After you placed order, you will redirect to DOKU payment page with all active payment</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\DokuHostedPayment</model>
+            </doku_hosted_payment>
+        </payment>
+        <doku_hosted_config>
+            <cc_hosted>
+                <title>Credit Card (dokuhosted)</title>
+                <description>Credit Card Doku hosted payment method</description>
+            </cc_hosted>
+            <cc_recurring_hosted>
+                <title>Credit Card Recurring (dokuhosted)</title>
+                <description>Credit Card Recurring Doku hosted payment method</description>
+            </cc_recurring_hosted>
+            <alfa_hosted>
+                <title>Alfa Group (dokuhosted)</title>
+                <description>Alfa Group Doku hosted payment method</description>
+            </alfa_hosted>
+            <bca_va_hosted>
+                <title>BCA VA (dokuhosted)</title>
+                <description>BCA VA Doku hosted payment method</description>               
+            </bca_va_hosted>
+            <doku_wallet_hosted>
+                <title>Doku Wallet (dokuhosted)</title>
+                <description>Doku Wallet Doku hosted payment method</description>
+            </doku_wallet_hosted>
+            <indomaret_hosted>
+                <title>Indomaret (dokuhosted)</title>
+                <description>Indomaret Doku hosted payment method</description>
+            </indomaret_hosted>
+            <mandiri_clickpay_hosted>
+                <title>Mandiri Clickpay (dokuhosted)</title>
+                <description>Mandiri Clickpay Doku hosted payment method</description>
+            </mandiri_clickpay_hosted>
+            <ib_danamon_hosted>
+                <title>Danamon Internet Banking (dokuhosted)</title>
+                <description>Danamon Internet Banking Doku hosted payment method</description>
+            </ib_danamon_hosted>
+            <ib_permata_hosted>
+                <title>Permata Internet Banking (dokuhosted)</title>
+                <description>Permata Internet Banking Doku hosted payment method</description>
+            </ib_permata_hosted>
+            <ib_muamalat_hosted>
+                <title>Muamalat Internet Banking (dokuhosted)</title>
+                <description>Muamalat Internet Banking Doku hosted payment method</description>
+            </ib_muamalat_hosted>
+            <epay_bri_hosted>
+                <title>ePay BRI (dokuhosted)</title>
+                <description>ePay BRI Doku hosted payment method</description>
+            </epay_bri_hosted>
+            <cimb_click_hosted>
+                <title>CIMB Click (dokuhosted)</title>
+                <description>CIMB Click Doku hosted payment method</description>
+            </cimb_click_hosted>
+            <permata_va_hosted>
+                <title>Permata VA (dokuhosted)</title>
+                <description>Permata VA Doku hosted payment method</description>
+            </permata_va_hosted>
+            <danamon_va_hosted>
+                <title>Danamon VA (dokuhosted)</title>
+                <description>Danamon VA Doku hosted payment method</description>
+            </danamon_va_hosted>
+            <mandiri_va_hosted>
+                <title>Mandiri VA (dokuhosted)</title>
+                <description>Mandiri VA Doku hosted payment method</description>
+            </mandiri_va_hosted>
+            <bri_va_hosted>
+                <title>BRI VA (dokuhosted)</title>
+                <description>BRI VA Doku hosted payment method</description>
+            </bri_va_hosted>
+            <cimb_va_hosted>
+                <title>CIMB VA (dokuhosted)</title>
+                <description>CIMB VA Doku hosted payment method</description>
+            </cimb_va_hosted>
+            <kredivo_hosted>
+                <title>Kredivo (dokuhosted)</title>
+                <description>Kredivo Doku hosted payment method</description>
+            </kredivo_hosted>
+            <sinarmas_va_hosted>
+                <title>Sinarmas VA (dokuhosted)</title>
+                <description>Sinarmas VA Doku hosted payment method</description>
+            </sinarmas_va_hosted>
+            <doku_hosted_payment>
+                <title>All Payment (dokuhosted)</title>
+                <description>After you placed order, you will redirect to DOKU payment page with all active payment</description>
+            </doku_hosted_payment>
+        </doku_hosted_config>
+    </default>
+</config>

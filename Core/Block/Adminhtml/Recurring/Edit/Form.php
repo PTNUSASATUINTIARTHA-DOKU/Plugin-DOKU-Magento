@@ -1,0 +1,38 @@
+<?php
+/**
+ *
+ * User: leogent <leogent@gmail.com>
+ * Date: 2/11/19
+ * Time: 6:31 PM
+ */
+
+namespace Doku\Core\Block\Adminhtml\Recurring\Edit;
+
+
+class Form extends \Magento\Backend\Block\Widget\Form\Generic
+{
+    /**
+     * Customer Service.
+     *
+     * @var CustomerAccountServiceInterface
+     */
+    protected $_customerAccountService;
+
+    protected function _prepareForm()
+    {
+        /** @var \Magento\Framework\Data\Form $form */
+        $form = $this->_formFactory->create(
+            array(
+                'data' => array(
+                    'id' => 'edit_form',
+                    'action' => $this->getUrl('*/*/save'),
+                    'method' => 'post',
+                    'enctype' => 'multipart/form-data'
+                )
+            )
+        );
+        $form->setUseContainer(true);
+        $this->setForm($form);
+        return parent::_prepareForm();
+    }
+}

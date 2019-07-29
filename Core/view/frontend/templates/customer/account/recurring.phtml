@@ -1,0 +1,65 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Doku\Core\Block\Customer\Recurring $block */
+$recurrings = $block->getRecurring();
+$statuses = [
+    0 => "Inactive",
+    1 => "Active"
+ ];
+?>
+<?php if ($recurrings && count($recurrings)): ?>
+    <div class="table-wrapper reviews">
+        <table class="data table table-reviews" id="my-reviews-table">
+            <caption class="table-caption"><?= $block->escapeHtml(__('Recurring Registration')) ?></caption>
+            <thead>
+            <tr>
+                <th scope="col" class="col date"><?= $block->escapeHtml(__('Created')) ?></th>
+                <th scope="col" class="col item"><?= $block->escapeHtml(__('Bill Number')) ?></th>
+                <th scope="col" class="col date"><?= $block->escapeHtml(__('From')) ?></th>
+                <th scope="col" class="col date"><?= $block->escapeHtml(__('To')) ?></th>
+                <th scope="col" class="col date"><?= $block->escapeHtml(__('Status')) ?></th>
+                <th scope="col" class="col actions">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($recurrings as $recurring): ?>
+                <tr>
+                    <td data-th="<?= $block->escapeHtml(__('Created')) ?>" class="col date"><?= $block->escapeHtml($block->dateFormat($recurring->getCreatedAt())) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('Bill Number')) ?>" class="col date"><?= $block->escapeHtml($recurring->getBillNumber()) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('Start Date')) ?>" class="col date"><?= $block->escapeHtml($block->dateFormat($recurring->getStartDate())) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('End Date')) ?>" class="col date"><?= $block->escapeHtml($block->dateFormat($recurring->getEndDate())) ?></td>
+                    <td data-th="<?= $block->escapeHtml(__('Subscription Status')) ?>" class="col date"><?= $block->escapeHtml($statuses[$recurring->getSubscriptionStatus()]) ?></td>
+
+                    <td data-th="<?= $block->escapeHtmlAttr(__('Actions')) ?>" class="col actions">
+                        <?php if($recurring->getSubscriptionStatus() == 1):?>
+                        <a href="<?= $block->escapeUrl($block->getUpdateCardUrl($recurring)) ?>" class="action more">
+                            <span><?= $block->escapeHtml(__('Update Card')) ?></span>
+                        </a>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getToolbarHtml()): ?>
+        <div class="toolbar products-reviews-toolbar bottom">
+            <?= $block->getToolbarHtml() ?>
+        </div>
+    <?php endif; ?>
+<?php else: ?>
+    <div class="message info empty"><span><?= $block->escapeHtml(__('You have no recurring orders.')) ?></span></div>
+<?php endif; ?>
+<div class="actions-toolbar">
+    <div class="secondary">
+        <a class="action back" href="<?= $block->escapeUrl($block->getBackUrl()) ?>">
+            <span><?= $block->escapeHtml(__('Back')) ?></span>
+        </a>
+    </div>
+</div>

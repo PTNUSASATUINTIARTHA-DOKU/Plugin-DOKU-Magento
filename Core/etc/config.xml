@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <doku_general_config>
+            <js_merchant_hosted>
+                <development_url>https://staging.doku.com/doku-js/assets/js/doku.uncompress-1.4-SNAPSHOOT.js</development_url>
+            </js_merchant_hosted>
+        </doku_general_config>
+        <payment>
+            <bca_klikpay_core>
+                <title>BCA Klikpay</title>
+                <description>BCA Klikpay payment method by Doku</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Core\Model\Payment\BcaKlikpayCore</model>
+            </bca_klikpay_core>
+            <klik_bca_core>
+                <title>Klik BCA</title>
+                <description>Klik BCA payment method by Doku</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Core\Model\Payment\KlikBcaCore</model>
+            </klik_bca_core>
+        </payment>
+        <doku_bca_payment_config>
+            <bca_klikpay_core>
+                <title>BCA Klikpay (dokuhosted)</title>
+                <description>BCA Klikpay Doku hosted payment method</description>
+            </bca_klikpay_core>
+            <klik_bca_core>
+                <title>Klik BCA (dokuhosted)</title>
+                <description>Klik BCA Doku hosted payment method</description>
+            </klik_bca_core>
+        </doku_bca_payment_config>
+    </default>
+</config>
