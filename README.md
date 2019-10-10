@@ -1,4 +1,15 @@
-## Payment Channel Options Avalaiblitiy on Magento Plugin: ##
+Magento is an ecommerce platform built on open source technology which provides online merchants with a flexible shopping cart system, as well as control over the look, content and functionality of their online stores. Magento offers powerful marketing, search engine optimization, and catalog-management tools. Magento's ability to scale allows shops with only a few products and simple needs to easily expand to tens of thousands of products and complex custom behavior without changing platforms.
+
+In order to facilitate the development of e-commerce through Magento, Doku as the largest payment enabler in Indonesia, provides a payment module that can be used easily and quickly (plug & play) on the Magento platform.
+
+The features available in the Magento plugin are:
+1. Online payment in various payment channels in almost all banks in Indonesia.
+2. Filing refunds online (voids and refunds).
+3. Recurring (repayment) and installments.
+4. Fraud detection.
+5. Email confirmation.
+
+# Payment Channel Options Avalaiblitiy on Magento Plugin: #
 
 1. Credit Card
    - Sale
