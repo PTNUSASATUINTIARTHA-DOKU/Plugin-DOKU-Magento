@@ -13,7 +13,7 @@ class Data extends AbstractHelper {
     protected $dataObject;
     protected $config;
 
-    
+
     CONST REQUEST_URL_HOSTED_DEVELOPMENT = 'https://staging.doku.com/Suite/Receive';
     CONST REQUEST_URL_HOSTED_PRODUCTION = 'https://pay.doku.com/Suite/Receive';
 
@@ -22,29 +22,29 @@ class Data extends AbstractHelper {
 
     CONST REQUEST_URL_GENERATE_PAYCODE_DEVELOPMENT = 'https://staging.doku.com/api/payment/DoGeneratePaycodeVA';
     CONST REQUEST_URL_GENERATE_PAYCODE_PRODUCTION = 'https://pay.doku.com/api/payment/doGeneratePaymentCode';
-    
+
     CONST CHECKSTATUS_URL_DEVELOPMENT = "https://staging.doku.com/Suite/CheckStatus";
-    CONST CHECKSTATUS_URL_PRODUCTION = "https://pay.doku.com/Suite/CheckStatus";
-    
+    CONST CHECKSTATUS_URL_PRODUCTION = "https://gts.doku.com/Suite/CheckStatus";
+
     CONST PAYMENT_URL_DEVELOPMENT = 'https://staging.doku.com/api/payment/paymentMip';
     CONST PAYMENT_URL_PRODUCTION = 'https://pay.doku.com/api/payment/paymentMip';
-    
+
     CONST DIRECT_PAYMENT_URL_PRODUCTION = 'https://pay.doku.com/api/payment/PaymentMIPDirect';
     CONST DIRECT_PAYMENT_URL_DEVELOPMENT = 'https://staging.doku.com/api/payment/PaymentMIPDirect';
 
     const RECURRING_STATUSTYPE_REGISTRATION = 'G';
     const RECURRING_STATUSTYPE_UPDATE = 'T';
-    
+
     public function __construct(
-        TransportBuilder $transportBuilder, 
-        DataObject $dataObject, 
+        TransportBuilder $transportBuilder,
+        DataObject $dataObject,
         GeneralConfiguration $generalConfiguration
     ) {
         $this->transportBuilder = $transportBuilder;
         $this->dataObject = $dataObject;
         $this->config = $generalConfiguration;
     }
-    
+
     public function doCreateWords($data) {
         if (!empty($data['device_id']))
             if (!empty($data['pairing_code']))
@@ -176,7 +176,7 @@ class Data extends AbstractHelper {
                     ->addBcc($bccEmailAddress[0])
                     ->getTransport();
             $transport->sendMessage();
-            
+
             foreach ($bccEmailAddress as $bccIdx => $bccVal) {
                 if ($bccIdx != 0) {
                     $transport = $this->transportBuilder->setTemplateIdentifier($template)->setFrom($sender)
@@ -249,7 +249,7 @@ class Data extends AbstractHelper {
             return $responseJson;
         }
     }
-    
+
     public function getTotalAdminFeeAndDisc($adminFee, $adminFeeType, $discountAmount, $discountType, $grandTotal) {
 
         $totalAdminFee = 0;
@@ -282,7 +282,7 @@ class Data extends AbstractHelper {
 
         return $total;
     }
-    
+
     public function checkStatusOrder($dataParam){
 
         $url = SELF::CHECKSTATUS_URL_PRODUCTION;
@@ -301,19 +301,19 @@ class Data extends AbstractHelper {
 
         $data = curl_exec( $ch );
         curl_close($ch);
-        
+
         try {
             $xml = new \SimpleXMLElement($data);
             $response = json_decode(json_encode((array) $xml), TRUE);
-            $response["request_status"] = true;  
+            $response["request_status"] = true;
             return $response;
         } catch (\Exception $e) {
             return array("request_status" => false, "response" => $data);
         }
     }
-    
+
     public function doPrePayment($data) {
-        
+
         $url = SELF::DIRECT_PAYMENT_URL_PRODUCTION;
 
         if ($this->config->getEnvironment() == 'development') {
@@ -337,7 +337,7 @@ class Data extends AbstractHelper {
         } else {
             return $responseJson;
         }
-        
+
     }
 
     public function doDeleteSubscription($dataParam){
