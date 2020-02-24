@@ -76,6 +76,7 @@ class Status
 
     /**
      * Update Column status
+     * No longer use because it loop all transaction in sales_order_grid
      */
     public function updateOrderRefundStatus()
     {

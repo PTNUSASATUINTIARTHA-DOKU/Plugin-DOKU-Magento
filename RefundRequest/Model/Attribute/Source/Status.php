@@ -61,7 +61,7 @@ class Status implements \Magento\Framework\Data\OptionSourceInterface
      */
     public function toOptionArray()
     {
-        $this->dokuRefundStatus->updateOrderRefundStatus();
+//        $this->dokuRefundStatus->updateOrderRefundStatus();
 
         return [
             ['value' => self::PENDING,  'label' => __('Pending')],

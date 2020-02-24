@@ -150,6 +150,12 @@ class Processrefund
                 $refundResult = $this->refundHelper->doRefund($param);
                 if($refundResult['RESPONSECODE'] == '0000' && $refundResult['RESPONSEMSG'] == 'SUCCESS') {
                     $refund->setRefundStatus(\Doku\RefundRequest\Model\Attribute\Source\Status::REFUNDED);
+                    $table = $this->resourceConnection->getTableName('sales_order_grid');
+                    $this->updateData(
+                        $table,
+                        ['refund_status' => $$refund->getRefundStatus],
+                        "increment_id = $refund->getIncrementId()"
+                    );
                 }
                 $refund->setDokuStatus($refundResult['RESPONSEMSG']);
                 $refund->save();
