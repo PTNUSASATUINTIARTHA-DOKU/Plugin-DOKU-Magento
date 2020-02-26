@@ -103,9 +103,9 @@ class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAware
         
         $expiryValue = 360;
 
-        if (isset($requestParams['EXPIRYTIME']) && $requestParams['EXPIRYTIME'] != null && empty($requestParams['EXPIRYTIME'])) {
+        if (!empty($requestParams['EXPIRYTIME'])) {
             $expiryValue = $requestParams['EXPIRYTIME'];
-        } else if (isset($requestParams['req_expiry_time']) && $requestParams['req_expiry_time'] != null && empty($requestParams['req_expiry_time'])) {
+        } else if (!empty($requestParams['req_expiry_time'])) {
             $expiryValue = $requestParams['req_expiry_time'];
         }
 
