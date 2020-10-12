@@ -37,12 +37,12 @@ class Request extends \Magento\Framework\App\Action\Action {
     protected $_recurringRepository;
 
     public function __construct(
-        Session $session, 
-        Order $order, 
-        ResourceConnection $resourceConnection, 
-        DokuHostedConfigProvider $config, 
-        Data $helper, 
-        Context $context, 
+        Session $session,
+        Order $order,
+        ResourceConnection $resourceConnection,
+        DokuHostedConfigProvider $config,
+        Data $helper,
+        Context $context,
         PageFactory $pageFactory,
         LoggerInterface $loggerInterface,
         SessionFactory $sessionFactory,
@@ -69,7 +69,7 @@ class Request extends \Magento\Framework\App\Action\Action {
         $this->_recurringRepository = $recurringRepository;
         return parent::__construct($context);
     }
-    
+
     protected function getOrder() {
 
         if (!$this->session->getLastRealOrder()->getIncrementId()) {
@@ -86,9 +86,9 @@ class Request extends \Magento\Framework\App\Action\Action {
                         ->setOrder('created_at', 'DESC')
                         ->getFirstItem();
             }
-            
+
             return $order;
-        } else { 
+        } else {
             return $this->order->loadByIncrementId($this->session->getLastRealOrder()->getIncrementId());
         }
     }
@@ -106,7 +106,7 @@ class Request extends \Magento\Framework\App\Action\Action {
             $order->setState(Order::STATE_NEW);
             $this->session->getLastRealOrder()->setState(Order::STATE_NEW);
             $order->save();
-            
+
             $this->logger->info('===== Request controller (Hosted) ===== Order Found!');
 
             $configCode = $this->config->getRelationPaymentChannel($order->getPayment()->getMethod());
@@ -143,16 +143,16 @@ class Request extends \Magento\Framework\App\Action\Action {
                         $realGrandTotal);
                 }
             }
-            
+
             $grandTotal = $realGrandTotal + $totalAdminFeeDisc['total_admin_fee'];
-            
+
             $buffGrandTotal = $grandTotal - $totalAdminFeeDisc['total_discount'];
-            
-            $grandTotal = $buffGrandTotal < 10000 ? 10000.00 : number_format($buffGrandTotal, 2, ".", ""); 
+
+            $grandTotal = $buffGrandTotal < 10000 ? 10000.00 : number_format($buffGrandTotal, 2, ".", "");
 
             $mallId = $config['payment']['core']['mall_id'];
             $sharedId = $this->config->getSharedKey();
-            
+
             $isInstallmentOrder = false;
             $sellectedInstallmentConfig = array();
             if ($order->getPayment()->getMethod() == 'cc_hosted' &&
@@ -187,7 +187,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                         'sharedid' => $sharedId
                     )
             );
-            
+
             $basket = "";
             $productInfo = "";
             foreach ($order->getAllVisibleItems() as $item) {
@@ -212,12 +212,16 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'NAME' => trim($billingData->getFirstname() . " " . $billingData->getLastname()),
                 'EMAIL' => $billingData->getEmail(),
                 'BASKET' => $basket,
-                'MOBILEPHONE' => $billingData->getTelephone()
+                'MOBILEPHONE' => $billingData->getTelephone(),
+                'SHIPPING_ZIPCODE' => $billingData->getPostcode(),
+                'SHIPPING_CITY' => $billingData->getCity(),
+                'SHIPPING_ADDRESS' => $billingData->getStreet(),
+                'SHIPPING_COUNTRY' => $billingData->getCountryId()
             );
-            
+
             if($configCode != "0"){
                $result['PAYMENTCHANNEL'] = $configCode;
-               
+
                if($result['PAYMENTCHANNEL'] == "37"){
                     $result['SHIPPING_ZIPCODE'] = $billingData->getPostcode();
                     $result['SHIPPING_CITY'] = $billingData->getCity();
@@ -244,7 +248,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                     $sql = "SELECT * FROM " . $tableName . " where customer_id = '" . $order->getCustomerId() . "'";
 
                     $tokenData = $connection->fetchRow($sql);
-                    
+
                     if(isset($tokenData['token_id']) && !empty($tokenData['token_id'])){
                         $result['TOKENID'] = $tokenData['token_id'];
                     }
