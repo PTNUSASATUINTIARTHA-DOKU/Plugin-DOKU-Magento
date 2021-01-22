@@ -52,7 +52,8 @@ class PaymentTypeColumn
                     $this->registry->register('doku_transaction', true);
                 }
             }
+            return $this->collection;
         }
-        return $this->collection;
+        return $result;
     }
 }
