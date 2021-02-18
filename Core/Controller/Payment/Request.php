@@ -137,6 +137,13 @@ class Request extends \Magento\Framework\App\Action\Action {
 
             $url = $config['payment']['core']['mip_request_url'];
             
+            $this->logger->info('===== Request controller (Core) ===== Adding Store Code into SESSIONID');
+            $sessionId = $this->storeManagerInterface
+                ->getStore($order->getStore()->getId())
+                ->getCode();
+            $sessionId = $sessionId . ':' . $order->getIncrementId();
+            $this->logger->info('===== Request controller (Core) ===== Adding Store Code into SESSIONID DONE');
+
             $requestArr = array(
                 'MALLID' => $mallId,
                 'CHAINMERCHANT' => $config['payment']['core']['chain_id'] ? $config['payment']['core']['chain_id'] : 'NA',
@@ -147,7 +154,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'REQUESTDATETIME' => $this->_timezoneInterface->date()->format('YmdHis'),
                 'CURRENCY' => '360',
                 'PURCHASECURRENCY' => '360',
-                'SESSIONID' => $order->getIncrementId(),
+                'SESSIONID' => $sessionId,
                 'NAME' => trim($billingData->getFirstname() . " " . $billingData->getLastname()),
                 'EMAIL' => $billingData->getEmail(),
                 'BASKET' => $basket,

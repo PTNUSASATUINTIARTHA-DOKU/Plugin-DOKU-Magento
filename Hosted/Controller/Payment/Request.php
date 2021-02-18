@@ -15,6 +15,7 @@ use \Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\Request\Http;
 use Doku\Core\Model\GeneralConfiguration;
 use \Magento\Framework\Stdlib\DateTime\TimezoneInterface;
+use \Magento\Store\Model\StoreManagerInterface;
 use Doku\Core\Model\RecurringFactory;
 use Doku\Core\Api\RecurringRepositoryInterface;
 
@@ -33,6 +34,7 @@ class Request extends \Magento\Framework\App\Action\Action {
     protected $httpRequest;
     protected $generalConfiguration;
     protected $_timezoneInterface;
+    protected $storeManagerInterface;
     protected $_recurringFactory;
     protected $_recurringRepository;
 
@@ -50,6 +52,7 @@ class Request extends \Magento\Framework\App\Action\Action {
         GeneralConfiguration $_generalConfiguration,
         ScopeConfigInterface $scopeConfig,
         TimezoneInterface $timezoneInterface,
+        StoreManagerInterface $_storeManagerInterface,
         RecurringFactory $recurringFactory,
         RecurringRepositoryInterface $recurringRepository
     ) {
@@ -65,6 +68,7 @@ class Request extends \Magento\Framework\App\Action\Action {
         $this->generalConfiguration = $_generalConfiguration;
         $this->scopeConfig = $scopeConfig;
         $this->_timezoneInterface = $timezoneInterface;
+        $this->storeManagerInterface = $_storeManagerInterface;
         $this->_recurringFactory = $recurringFactory;
         $this->_recurringRepository = $recurringRepository;
         return parent::__construct($context);
@@ -197,6 +201,13 @@ class Request extends \Magento\Framework\App\Action\Action {
             }
             $chainMerchant = $config['payment']['core']['chain_id'] ? $config['payment']['core']['chain_id'] : 'NA';
 
+            $this->logger->info('===== Request controller (Hosted) ===== Adding Store Code into SESSIONID');
+            $sessionId = $this->storeManagerInterface
+                ->getStore($order->getStore()->getId())
+                ->getCode();
+            $sessionId = $sessionId . ':' . $order->getIncrementId();
+            $this->logger->info('===== Request controller (Hosted) ===== Adding Store Code into SESSIONID DONE');
+
             $result = array(
                 'URL' => $config['payment']['core']['request_url'],
                 'MALLID' => $mallId,
@@ -208,7 +219,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'REQUESTDATETIME' => $this->_timezoneInterface->date()->format('YmdHis'),
                 'CURRENCY' => '360',
                 'PURCHASECURRENCY' => '360',
-                'SESSIONID' => $order->getIncrementId(),
+                'SESSIONID' => $sessionId,
                 'NAME' => trim($billingData->getFirstname() . " " . $billingData->getLastname()),
                 'EMAIL' => $billingData->getEmail(),
                 'BASKET' => $basket,

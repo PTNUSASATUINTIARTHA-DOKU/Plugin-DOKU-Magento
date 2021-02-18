@@ -15,6 +15,9 @@ use Magento\Framework\App\CsrfAwareActionInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 use Magento\Framework\App\RequestInterface;
 
+use Magento\Store\Model\StoreManagerInterface;
+use Magento\Store\Api\StoreRepositoryInterface; 
+
 class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAwareActionInterface {
 
     protected $order;
@@ -26,6 +29,8 @@ class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAware
     protected $formKeyValidator;
     protected $transactionRepository;
     protected $recurringRepository;
+    protected $storeManagerInterface;
+    protected $storeRepositoryInterface;
 
     public function __construct(
             Order $order, 
@@ -37,7 +42,9 @@ class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAware
             \Magento\Framework\Stdlib\DateTime\TimezoneInterface $timeZone,
             Validator $formKeyValidator,
             TransactionRepositoryInterface $transactionRepository,
-            RecurringRepositoryInterface $recurringRepository
+            RecurringRepositoryInterface $recurringRepository,
+            StoreManagerInterface $_storeManagerInterface,
+            StoreRepositoryInterface $_storeRepositoryInterface
     ) {
         
         $this->order = $order;
@@ -49,6 +56,8 @@ class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAware
         $this->formKeyValidator = $formKeyValidator;
         $this->recurringRepository = $recurringRepository;
         $this->transactionRepository = $transactionRepository;
+        $this->storeManagerInterface = $_storeManagerInterface;
+        $this->storeRepositoryInterface = $_storeRepositoryInterface;
         return parent::__construct($context);
     }
 
@@ -149,10 +158,23 @@ class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAware
             
             $words = $this->helper->doCreateWords($wordsParams);
 
+            $storeCode = "";
+
             $this->logger->info('===== Redirect Controller  ===== words : ' . $words);
 
             if ($words == $post['WORDS']) {
                 $this->logger->info('===== Redirect Controller  ===== Checking done');
+
+                $this->logger->info('===== Checking Store Code =====');
+
+                if (isset($post['SESSIONID'])) {
+                    $storeCode = explode(':', $post['SESSIONID'])[0];
+                    $this->logger->info('Store Code: ' . $storeCode);
+                    $store = $this->storeRepositoryInterface->getActiveStoreByCode($storeCode);
+                    $this->storeManagerInterface->setCurrentStore($store->getId());
+                }
+
+                $this->logger->info('===== Checking Store Code done =====');
 
                 $this->logger->info('===== Redirect Controller  ===== Check STATUSCODE');
 
