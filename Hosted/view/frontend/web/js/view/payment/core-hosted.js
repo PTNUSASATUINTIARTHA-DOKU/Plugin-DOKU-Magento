@@ -103,6 +103,14 @@ define(
                     type: 'sinarmas_va_hosted',
                     component: 'Doku_Hosted/js/view/payment/method-renderer/sinarmas-va-hosted-method'
                 },
+                {
+                    type: 'ovo_hosted',
+                    component: 'Doku_Hosted/js/view/payment/method-renderer/ovo-hosted-method'
+                },
+                {
+                    type: 'linkaja_hosted',
+                    component: 'Doku_Hosted/js/view/payment/method-renderer/linkaja-hosted-method'
+                },                                
             );
         }
         /** Add view logic here if needed */

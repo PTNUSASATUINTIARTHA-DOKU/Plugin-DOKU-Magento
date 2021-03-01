@@ -35,7 +35,9 @@ class Allchannel implements ArrayInterface {
             '26' => 'danamon_va_hosted',
             '36' => 'permata_va_hosted',
             '19' => 'cimb_click_hosted',
-            '37' => 'kredivo_hosted'
+            '37' => 'kredivo_hosted',
+            '53' => 'ovo_hosted',
+            '50' => 'linkaja_hosted',
         ];
     }
 

@@ -189,6 +189,22 @@
                                                                         </item>
                                                                     </item>
                                                                 </item>
+                                                                <item name="hosted-ovo" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="ovo_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="hosted-linkaja" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="linkaja_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                     </item>

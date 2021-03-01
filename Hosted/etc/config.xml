@@ -176,6 +176,22 @@
                 <group>offline</group>
                 <model>Doku\Hosted\Model\Payment\DokuHostedPayment</model>
             </doku_hosted_payment>
+            <ovo_hosted>
+                <title>OVO (dokuhosted)</title>
+                <description>OVO Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\OvoHosted</model>
+            </ovo_hosted>
+            <linkaja_hosted>
+                <title>LinkAja (dokuhosted)</title>
+                <description>LinkAja Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\LinkAjaHosted</model>
+            </linkaja_hosted>
         </payment>
         <doku_hosted_config>
             <cc_hosted>
@@ -258,6 +274,14 @@
                 <title>All Payment (dokuhosted)</title>
                 <description>After you placed order, you will redirect to DOKU payment page with all active payment</description>
             </doku_hosted_payment>
+            <ovo_hosted>
+                <title>OVO (dokuhosted)</title>
+                <description>OVO Doku hosted payment method</description>
+            </ovo_hosted>
+            <linkaja_hosted>
+                <title>LinkAja (dokuhosted)</title>
+                <description>OVO Doku hosted payment method</description>
+            </linkaja_hosted>
         </doku_hosted_config>
     </default>
 </config>

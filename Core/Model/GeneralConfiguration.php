@@ -71,6 +71,8 @@ class GeneralConfiguration implements ConfigProviderInterface {
         'bca_klikpay_core' => "18",
         'klik_bca_core' => "03",
         'doku_hosted_payment' => "0",
+        'ovo_hosted' => '53',
+        'linkaja_hosted' => '50',
         
         'permata_va_merchanthosted' => "36",
         'mandiri_va_merchanthosted' => "41",

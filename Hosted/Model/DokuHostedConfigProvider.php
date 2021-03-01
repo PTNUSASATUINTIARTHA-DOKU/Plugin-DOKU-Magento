@@ -152,7 +152,9 @@ class DokuHostedConfigProvider implements ConfigProviderInterface
             '33' => 'ib_danamon_hosted',
             '28' => 'ib_permata_hosted',
             '19' => 'cimb_click_hosted',
-            '37' => 'kredivo_hosted'
+            '37' => 'kredivo_hosted',
+            '53' => 'ovo_hosted',
+            '50' => 'linkaja_hosted',
         ];
 
         $allowed = [];
