@@ -73,6 +73,7 @@ class GeneralConfiguration implements ConfigProviderInterface {
         'doku_hosted_payment' => "0",
         'ovo_hosted' => '53',
         'linkaja_hosted' => '50',
+        'bni_va_hosted' => "38",
         
         'permata_va_merchanthosted' => "36",
         'mandiri_va_merchanthosted' => "41",
@@ -85,7 +86,8 @@ class GeneralConfiguration implements ConfigProviderInterface {
         'indomaret_merchanthosted' => "31",
         'cc_merchanthosted' => "15",
         'doku_wallet_merchanthosted' => "04",
-        'mandiri_clickpay_merchanthosted' => "02"
+        'mandiri_clickpay_merchanthosted' => "02",
+        'bni_va_merchanthosted' => "38"
     ];
 
     public function __construct(

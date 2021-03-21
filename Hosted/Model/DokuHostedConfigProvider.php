@@ -124,7 +124,8 @@ class DokuHostedConfigProvider implements ConfigProviderInterface
             '26' => 'danamon_va_hosted',
             '34' => 'bri_va_hosted',
             '35' => 'alfa_hosted',
-            '31' => 'indomaret_hosted'
+            '31' => 'indomaret_hosted',
+            '38' => 'bni_va_hosted'
         ];
 
         $allowed = [];

@@ -38,6 +38,7 @@ class Allchannel implements ArrayInterface {
             '37' => 'kredivo_hosted',
             '53' => 'ovo_hosted',
             '50' => 'linkaja_hosted',
+            '38' => 'bni_va_hosted',
         ];
     }
 

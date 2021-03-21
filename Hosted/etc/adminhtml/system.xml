@@ -727,6 +727,33 @@
                     <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
                 </field>
             </group>
+            <group id="bni_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BNI VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                </field>
+            </group>
         </section>
 
         <section id="doku_hosted_config" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -1622,7 +1649,40 @@
                     <config_path>payment/linkaja_hosted/admin_fee_type</config_path>
                 </field>
             </group>
-
+            <group id="bni_va_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BNI VA (dokuhosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/bni_va_hosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/bni_va_hosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/bni_va_hosted/description</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Amount</label>
+                    <config_path>payment/bni_va_hosted/disc_amount</config_path>
+                </field>
+                <field id="disc_type" translate="label" type="select" sortOrder="219" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Discount Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/bni_va_hosted/disc_type</config_path>
+                </field>
+                <field id="admin_fee" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee</label>
+                    <config_path>payment/bni_va_hosted/admin_fee</config_path>
+                </field>
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Admin Fee Type</label>
+                    <source_model>Doku\Hosted\Model\Config\Source\PercentageSelect</source_model>
+                    <config_path>payment/bni_va_hosted/admin_fee_type</config_path>
+                </field>
+            </group>
         </section>
     </system>
 </config>

@@ -107,6 +107,15 @@
                 <group>offline</group>
                 <model>Doku\Merchanthosted\Model\Payment\MandiriClickpayMerchanthosted</model>
             </mandiri_clickpay_merchanthosted>
+            <bni_va_merchanthosted>
+                <title>BNI VA (merchant hosted)</title>
+                <description>BNI VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88030</payment_code_prefix>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Merchanthosted\Model\Payment\BniVaMerchanthosted</model>
+            </bni_va_merchanthosted>
         </payment>
         <doku_merchanthosted_config>
             <permata_va_merchanthosted>
@@ -166,6 +175,11 @@
                 <title>Mandiri Clickay (merchant hosted)</title>
                 <description>Mandiri Clickay Doku merchant hosted payment method</description>
             </mandiri_clickpay_merchanthosted>
+            <bni_va_merchanthosted>
+                <title>BNI VA (merchant hosted)</title>
+                <description>BNI VA Doku merchant hosted payment method</description>
+                <payment_code_prefix>88030</payment_code_prefix>
+            </bni_va_merchanthosted>
         </doku_merchanthosted_config>
     </default>
 </config>

@@ -1,0 +1,122 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "%subject" subject=$data.subject}} @-->
+{{template config_path="design/email/header_template"}}
+<table class="top-section">
+    <tr>
+        <td class="column-left">
+            <h2>{{trans 'Thank You'}}</h2>
+        </td>
+    </tr>
+    <tr>
+        <td class="column-left">
+            <p>{{trans 'Dear, '}} <b>{{trans '%customerName' customerName=$data.customerName}}</b></p>
+        </td>
+    </tr>
+</table>
+<table class="mid-section">
+    <tr>
+        <td>
+            <h2>{{trans 'Your order <span class="no-link">#%orderId</span>' orderId=$data.orderId | raw}}</h2>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <p>{{trans "Payment Channel"}} </p>
+        </td>
+        <td>
+            <p>{{trans ":"}} </p>
+        </td>
+        <td>
+            <p>{{trans "<b>%paymentChannel</b>" paymentChannel=$data.paymentChannel | raw}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{trans "Total"}} </p>
+        </td>
+        <td>
+            <p>{{trans ":"}} </p>
+        </td>
+        <td>
+            <p>{{trans "<b>Rp %amount</b>" amount=$data.amount | raw}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{trans "Discount Amount"}} </p>
+        </td>
+        <td>
+            <p>{{trans ":"}} </p>
+        </td>
+        <td>
+            <p>{{trans "Rp %discountValue" discountValue=$data.discountValue | raw}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{trans "Admin Fee"}} </p>
+        </td>
+        <td>
+            <p>{{trans ":"}} </p>
+        </td>
+        <td>
+            <p>{{trans "Rp %adminFeeValue" adminFeeValue=$data.adminFeeValue | raw}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{trans "Virtual Account Number"}} </p>
+        </td>
+        <td>
+            <p>{{trans ":"}} </p>
+        </td>
+        <td>
+            <p>{{trans "%vaNumber" vaNumber=$data.vaNumber | raw}} </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>{{trans "Please transfer before"}} </p>
+        </td>
+        <td>
+            <p>{{trans ":"}} </p>
+        </td>
+        <td>
+            <p>{{trans "%expiry" expiry=$data.expiry | raw}} </p>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <p><b>{{trans "Cara pembayaran via ATM BNI"}}</b></p>
+            <ol>
+                <li>{{trans "Datang ke ATM BNI terdekat"}}</li>
+                <li>{{trans "Masukkan kartu ATM dan input PIN ATM Anda"}}</li>
+                <li>{{trans 'Pilih menu "Transaksi lain" kemudian pilih menu "Pembayaran"'}}</li>
+                <li>{{trans 'Masukkan nomor VA / Kode Pembayaran 16 Digit Angka "%vaNumber"' vaNumber=$data.vaNumber}}</li>
+                <li>{{trans 'Halaman konfirmasi, cek kembali untuk "Nama dan Nominal Tagihan" apakah sudah sesuai, lalu tekan Benar/Ok'}}</li>
+                <li>{{trans "Simpan struk transaksi ATM Anda"}}</li>
+            </ol>
+            <br />
+            <p><b>{{trans "Cara pembayaran via Internet Banking BNI"}}</b></p>
+            <ol>
+                <li>{{trans "Login ke aplikasi Internet Banking BNI Anda"}}</li>
+                <li>{{trans 'Pilih menu "Transfer", kemudian pilih "Tambah rekening favorit"'}}</li>
+                <li>{{trans 'Masukkan nama dan nomor VA / Kode Pembayaran 16 Digit Angka "%vaNumber"' vaNumber=$data.vaNumber}} , kemudian input OTP</li>
+                <li>{{trans 'Kembali ke menu "Transfer"'}}</li>
+                <li>{{trans 'Pilih "Transfer antar rekening BNI", kemudian pilih nomor rekening tujuan'}}</li>
+                <li>{{trans "Pilih akun debit dan masukkan nominal, kemudian input OTP"}}</li>
+                <li>{{trans 'Simpan / cetak bukti transaksi elektronik Anda'}}</li>
+            </ol>
+        </td>
+    </tr>
+</table>
+{{template config_path="design/email/footer_template"}}

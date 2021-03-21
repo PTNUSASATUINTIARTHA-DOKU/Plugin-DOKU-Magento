@@ -205,6 +205,14 @@
                                                                         </item>
                                                                     </item>
                                                                 </item>
+                                                                <item name="hosted-bni-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Hosted/js/view/payment/core-hosted</item>
+                                                                    <item name="methods" xsi:type="array">
+                                                                        <item name="bni_va_hosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                     </item>

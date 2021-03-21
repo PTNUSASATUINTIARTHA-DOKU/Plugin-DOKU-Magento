@@ -157,6 +157,8 @@ class Data extends AbstractHelper {
                     $template = 'default_va_template';
                 } else if ($dokusTransactionOrder['payment_channel_id'] == "03") {
                     $template = 'klik_bca_template';
+                } else if ($dokusTransactionOrder['payment_channel_id'] == '38') {
+                    $template = 'bni_va_template';
                 }
             } else {
                 $template = "failed_template";

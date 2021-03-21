@@ -76,5 +76,8 @@
         <method name="linkaja_hosted">
             <allow_multiple_address>1</allow_multiple_address>
         </method>
+        <method name="bni_va_hosted">
+            <allow_multiple_address>1</allow_multiple_address>
+        </method>
     </methods>
 </payment>

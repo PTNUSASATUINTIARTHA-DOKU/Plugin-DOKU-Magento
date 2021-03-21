@@ -8,4 +8,5 @@
     <template id="permata_va_template" label="Permata VA Order Email" file="permata_va_template.html" type="html" module="Doku_Core" area="frontend"/>
     <template id="default_va_template" label="Default VA Order Email" file="default_va_template.html" type="html" module="Doku_Core" area="frontend"/>
     <template id="klik_bca_template" label="klik BCA Order Email" file="klik_bca_template.html" type="html" module="Doku_Core" area="frontend"/>
+    <template id="bni_va_template" label="BNI VA Order Email" file="bni_va_template.html" type="html" module="Doku_Core" area="frontend"/>
 </config>

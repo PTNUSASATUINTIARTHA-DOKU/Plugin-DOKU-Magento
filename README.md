@@ -21,7 +21,10 @@ The features available in the Magento plugin are:
    - Void
    - Refund: Full and Partial
    
-2. Doku Wallet
+2. Emoney:
+   - DOKU Wallet
+   - OVO
+   - LinkAja
 
 3. Bank Transfer:
    - BCA 
