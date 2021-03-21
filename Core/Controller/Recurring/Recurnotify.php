@@ -1,5 +1,5 @@
 <?php
-namespace Doku\Core\Controller\Service;
+namespace Doku\Core\Controller\Recurring;
 
 use \Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResourceConnection;

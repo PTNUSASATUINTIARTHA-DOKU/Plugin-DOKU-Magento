@@ -1,5 +1,5 @@
 <?php
-namespace Doku\Core\Controller\Service;
+namespace Doku\Core\Controller\Recurring;
 
 use Doku\Core\Model\RecurringpaymentFactory;
 use \Magento\Framework\App\Action\Context;

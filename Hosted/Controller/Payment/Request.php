@@ -388,6 +388,7 @@ class Request extends \Magento\Framework\App\Action\Action {
 
         if ($configCode == "17" && $order->getCustomerId()) {
             $recurringModel = $this->_recurringFactory->create();
+            $flatStatus = ($result['FLATSTATUS']) ? 1 : 0; 
             $recurringData = array(
                 'customer_id' => $result['CUSTOMERID'],
                 'status_type' => 'G', //registration
@@ -399,7 +400,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'execute_type' => $result['EXECUTETYPE'],
                 'execute_date' => $result['EXECUTEDATE'],
                 'execute_month' => $result['EXECUTEMONTH'],
-                'flat_status' => $result['FLATSTATUS'],
+                'flat_status' => $flatStatus,
                 'subscription_status' => 1
             );
             $recurringModel->setData($recurringData);
