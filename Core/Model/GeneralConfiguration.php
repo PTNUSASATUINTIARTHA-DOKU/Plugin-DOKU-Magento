@@ -400,47 +400,7 @@ class GeneralConfiguration implements ConfigProviderInterface {
         return $this->scopeConfig->getValue(self::RECURRING_EXECUTEDATE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
     public function getRecurringExecutemonth() {
-        $month = $this->timezoneInterface->date()->format('m');
-        $res = '';
-        switch ($month) {
-            case 1:
-                $res = 'JAN';
-                break;
-            case 2:
-                $res = 'FEB';
-                break;
-            case 3:
-                $res = 'MAR';
-                break;
-            case 4:
-                $res = 'APR';
-                break;
-            case 5:
-                $res = 'MAY';
-                break;
-            case 6:
-                $res = 'JUN';
-                break;
-            case 7:
-                $res = 'JUL';
-                break;
-            case 8:
-                $res = 'AUG';
-                break;
-            case 9:
-                $res = 'SEP';
-                break;
-            case 10:
-                $res = 'OCT';
-                break;
-            case 11:
-                $res = 'NOV';
-                break;
-            case 12:
-                $res = 'DEC';
-                break;
-        }
-        return $res;
+        return 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec';
     }
     public function getURLRecurringReg() {
         return $this->scopeConfig->getValue(self::URL_RECURRING_REG, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
