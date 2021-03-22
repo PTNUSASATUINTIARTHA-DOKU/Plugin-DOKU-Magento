@@ -26,11 +26,11 @@
                 <allowspecific>0</allowspecific>
                 <group>offline</group>
                 <model>Doku\Hosted\Model\Payment\CreditCardRecurringHosted</model>
-                <url_recurring_reg>http://staging.doku.com/Suite/Receive</url_recurring_reg>
-                <url_recurring_update>http://staging.doku.com/Suite/RecurUpdateCard</url_recurring_update>
-                <url_recurring_unsubscribe>http://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</url_recurring_unsubscribe>
-                <url_recurring_status>http://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</url_recurring_status>
-                <url_recurring_trans>http://staging.doku.com/AccountBilling/DoGetRecurTransaction</url_recurring_trans>
+                <url_recurring_reg>https://staging.doku.com/Suite/Receive</url_recurring_reg>
+                <url_recurring_update>https://staging.doku.com/Suite/RecurUpdateCard</url_recurring_update>
+                <url_recurring_unsubscribe>https://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</url_recurring_unsubscribe>
+                <url_recurring_status>https://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</url_recurring_status>
+                <url_recurring_trans>https://staging.doku.com/AccountBilling/DoGetRecurTransaction</url_recurring_trans>
             </cc_recurring_hosted>
             <alfa_hosted>
                 <title>Alfa Group (dokuhosted)</title>

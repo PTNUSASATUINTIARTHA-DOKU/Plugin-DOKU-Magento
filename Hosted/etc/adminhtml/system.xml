@@ -127,7 +127,7 @@
                 <field id="url_recurring_reg" translate="label" type="text" sortOrder="231" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Request</label>
                     <source_model>Doku\Hosted\Model\Config\Source\ExecuteDate</source_model>
-                    <comment>E.g: http://staging.doku.com/Suite/Receive</comment>
+                    <comment>E.g: https://staging.doku.com/Suite/Receive</comment>
                 </field>
                 <field id="url_registration_notify" translate="label" type="text" sortOrder="232" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Notify</label>
@@ -143,7 +143,7 @@
 
                 <field id="url_recurring_update" translate="label" type="text" sortOrder="241" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Request</label>
-                    <comment>E.g: http://staging.doku.com/Suite/RecurUpdateCard</comment>
+                    <comment>E.g: https://staging.doku.com/Suite/RecurUpdateCard</comment>
                 </field>
                 <field id="url_recurring_update_notify" translate="label" type="text" sortOrder="242" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Notify</label>
@@ -172,15 +172,15 @@
 
                 <field id="url_recurring_unsubscribe" translate="label" type="text" sortOrder="261" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Ubsubscribe</label>
-                    <comment>E.g: http://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</comment>
+                    <comment>E.g: https://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</comment>
                 </field>
                 <field id="url_recurring_status" translate="label" type="text" sortOrder="262" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Get Recurring Status</label>
-                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</comment>
+                    <comment>E.g: https://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</comment>
                 </field>
                 <field id="url_recurring_trans" translate="label" type="text" sortOrder="263" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Get Recurring Transaction</label>
-                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurTransaction</comment>
+                    <comment>E.g: https://staging.doku.com/AccountBilling/DoGetRecurTransaction</comment>
                 </field>
             </group>
             <group id="alfa_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -900,7 +900,7 @@
                 <field id="url_recurring_reg" translate="label" type="text" sortOrder="232" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Request</label>
                     <config_path>payment/cc_recurring_hosted/url_recurring_reg</config_path>
-                    <comment>E.g: http://staging.doku.com/Suite/Receive</comment>
+                    <comment>E.g: https://staging.doku.com/Suite/Receive</comment>
                 </field>
                 <field id="url_registration_notify" translate="label" type="text" sortOrder="233" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Notify</label>
@@ -918,7 +918,7 @@
                 <field id="url_recurring_update" translate="label" type="text" sortOrder="241" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Request</label>
                     <config_path>payment/cc_recurring_hosted/url_recurring_update</config_path>
-                    <comment>E.g: http://staging.doku.com/Suite/RecurUpdateCard</comment>
+                    <comment>E.g: https://staging.doku.com/Suite/RecurUpdateCard</comment>
                 </field>
                 <field id="url_recurring_update_notify" translate="label" type="text" sortOrder="242" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Notify</label>
@@ -951,17 +951,17 @@
                 <field id="url_recurring_unsubscribe" translate="label" type="text" sortOrder="261" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Unsubscribe</label>
                     <config_path>payment/cc_recurring_hosted/url_recurring_unsubscribe</config_path>
-                    <comment>E.g: http://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</comment>
+                    <comment>E.g: https://staging.doku.com/AccountBilling/DoDeleteSubscriptionSuite</comment>
                 </field>
                 <field id="url_recurring_status" translate="label" type="text" sortOrder="262" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Get Recurring Status</label>
                     <config_path>payment/cc_recurring_hosted/url_recurring_status</config_path>
-                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</comment>
+                    <comment>E.g: https://staging.doku.com/AccountBilling/DoGetRecurCustomerStatus</comment>
                 </field>
                 <field id="url_recurring_trans" translate="label" type="text" sortOrder="263" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Get Recurring Transaction</label>
                     <config_path>payment/cc_recurring_hosted/url_recurring_trans</config_path>
-                    <comment>E.g: http://staging.doku.com/AccountBilling/DoGetRecurTransaction</comment>
+                    <comment>E.g: https://staging.doku.com/AccountBilling/DoGetRecurTransaction</comment>
                 </field>
             </group>
             <group id="alfa_hosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
