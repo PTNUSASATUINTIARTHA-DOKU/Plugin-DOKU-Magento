@@ -315,7 +315,9 @@ class Request extends \Magento\Framework\App\Action\Action {
                         $result['EXECUTEMONTH'] = $this->generalConfiguration->getRecurringExecutemonth();
                         $result['FLATSTATUS'] = $this->generalConfiguration->getRecurringFlatstatus() ? 'TRUE' : 'FALSE';
                         if ($this->generalConfiguration->getRecurringRegisteramount()) {
-                            $result['REGISTERAMOUNT'] = $this->generalConfiguration->getRecurringRegisteramount();
+                            $result['REGISTERAMOUNT'] = number_format($this->generalConfiguration->getRecurringRegisteramount(), 2, ".", "");
+                        } else {
+                            $result['REGISTERAMOUNT'] = '10000.00';
                         }
                     }
                 }
