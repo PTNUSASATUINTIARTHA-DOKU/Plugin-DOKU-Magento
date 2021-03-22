@@ -303,7 +303,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                         $result['URL'] = $this->generalConfiguration->getURLRecurringReg();
                         $result['WORDS'] = sha1($mallId . $chainMerchant . $result['BILLNUMBER'] . $result['CUSTOMERID'] . $result['AMOUNT'] . $sharedId);
                         $result['BILLDETAIL'] = $productInfo;
-                        $result['BILLTYPE'] = "S"; // S = Shopping, I = Installment, D = Donation, P = Payment
+                        $result['BILLTYPE'] = "P"; // S = Shopping, I = Installment, D = Donation, P = Payment
                         $recurringStartDate = $this->_timezoneInterface->date()->format('Ymd');
                         $dtRecurringStartDate = $this->_timezoneInterface->date()->format('Y-m-d');
                         $result['STARTDATE'] = $recurringStartDate;
