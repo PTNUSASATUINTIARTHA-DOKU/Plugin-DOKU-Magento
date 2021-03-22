@@ -152,7 +152,7 @@ class Request extends \Magento\Framework\App\Action\Action {
 
             $buffGrandTotal = $grandTotal - $totalAdminFeeDisc['total_discount'];
 
-            $grandTotal = $buffGrandTotal < 10000 ? 10000.00 : number_format($buffGrandTotal, 2, ".", "");
+            $grandTotal = number_format($buffGrandTotal, 2, ".", "");
 
             $mallId = $config['payment']['core']['mall_id'];
             $sharedId = $this->config->getSharedKey();
