@@ -192,6 +192,14 @@
                 <group>offline</group>
                 <model>Doku\Hosted\Model\Payment\LinkAjaHosted</model>
             </linkaja_hosted>
+            <bni_va_hosted>
+                <title>BNI VA (dokuhosted)</title>
+                <description>BNI VA Doku hosted payment method</description>
+                <order_status>pending</order_status>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+                <model>Doku\Hosted\Model\Payment\BniVaHosted</model>
+            </bni_va_hosted>
         </payment>
         <doku_hosted_config>
             <cc_hosted>
@@ -282,6 +290,10 @@
                 <title>LinkAja (dokuhosted)</title>
                 <description>OVO Doku hosted payment method</description>
             </linkaja_hosted>
+            <bni_va_hosted>
+                <title>BNI VA (dokuhosted)</title>
+                <description>BNI VA Doku hosted payment method</description>
+            </bni_va_hosted>
         </doku_hosted_config>
     </default>
 </config>

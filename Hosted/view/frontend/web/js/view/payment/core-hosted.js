@@ -110,7 +110,11 @@ define(
                 {
                     type: 'linkaja_hosted',
                     component: 'Doku_Hosted/js/view/payment/method-renderer/linkaja-hosted-method'
-                },                                
+                },
+                {
+                    type: 'bni_va_hosted',
+                    component: 'Doku_Hosted/js/view/payment/method-renderer/bni-va-hosted-method'
+                },
             );
         }
         /** Add view logic here if needed */

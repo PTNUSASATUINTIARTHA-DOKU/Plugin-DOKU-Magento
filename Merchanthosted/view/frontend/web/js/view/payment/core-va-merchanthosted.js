@@ -50,6 +50,10 @@ define(
             {
                 type: 'indomaret_merchanthosted',
                 component: 'Doku_Merchanthosted/js/view/payment/method-renderer/indomaret-merchanthosted-method'
+            },
+            {
+                type: 'bni_va_merchanthosted',
+                component: 'Doku_Merchanthosted/js/view/payment/method-renderer/bni-va-merchanthosted-method'
             }
         );
 

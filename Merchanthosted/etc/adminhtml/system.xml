@@ -353,6 +353,36 @@
                     <source_model>Doku\Merchanthosted\Model\Config\Source\PercentageSelect</source_model>                
                 </field>
             </group>
+            <group id="bni_va_merchanthosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BNI VA (merchant hosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                </field>
+                <field id="payment_code_prefix" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Code Prefix / VA Number Prefix</label>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Amount</label>                
+                </field>                
+                <field id="disc_type" translate="label" type="select" sortOrder="222" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Type</label>                    
+                    <source_model>Doku\Merchanthosted\Model\Config\Source\PercentageSelect</source_model>                
+                </field>                
+                <field id="admin_fee" translate="label" type="text" sortOrder="223" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee</label>                
+                </field>                
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="224" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee Type</label>                    
+                    <source_model>Doku\Merchanthosted\Model\Config\Source\PercentageSelect</source_model>                
+                </field>
+            </group>
         </section>
         
         <section id="doku_merchanthosted_config" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -802,6 +832,44 @@
                     <label>Admin Fee Type</label>                    
                     <source_model>Doku\Merchanthosted\Model\Config\Source\PercentageSelect</source_model> 
                     <config_path>payment/mandiri_clickpay_merchanthosted/admin_fee_type</config_path>                  
+                </field>
+            </group>
+            <group id="bni_va_merchanthosted" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>BNI VA (merchant hosted)</label>
+                <field id="active" translate="label" type="select" sortOrder="201" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>payment/bni_va_merchanthosted/active</config_path>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <config_path>payment/bni_va_merchanthosted/title</config_path>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="217" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <config_path>payment/bni_va_merchanthosted/description</config_path>
+                </field>
+                <field id="payment_code_prefix" translate="label" type="text" sortOrder="218" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Code Prefix / VA Number Prefix</label>
+                    <config_path>payment/bni_va_merchanthosted/payment_code_prefix</config_path>
+                </field>
+                <field id="disc_amount" translate="label" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Amount</label>
+                    <config_path>payment/bni_va_merchanthosted/disc_amount</config_path>                
+                </field>                
+                <field id="disc_type" translate="label" type="select" sortOrder="221" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Discount Type</label>                    
+                    <source_model>Doku\Merchanthosted\Model\Config\Source\PercentageSelect</source_model> 
+                    <config_path>payment/bni_va_merchanthosted/disc_type</config_path>                 
+                </field>                
+                <field id="admin_fee" translate="label" type="text" sortOrder="222" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee</label>    
+                    <config_path>payment/bni_va_merchanthosted/admin_fee</config_path>             
+                </field>                
+                <field id="admin_fee_type" translate="label" type="select" sortOrder="223" showInDefault="1" showInWebsite="1" showInStore="1">                    
+                    <label>Admin Fee Type</label>                    
+                    <source_model>Doku\Merchanthosted\Model\Config\Source\PercentageSelect</source_model> 
+                    <config_path>payment/bni_va_merchanthosted/admin_fee_type</config_path>                  
                 </field>
             </group>
         </section>

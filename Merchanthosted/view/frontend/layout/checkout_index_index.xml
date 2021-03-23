@@ -120,6 +120,14 @@
                                                                         </item>
                                                                     </item>
                                                                 </item>
+                                                                <item name="merchanthosted-bni-va" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Doku_Merchanthosted/js/view/payment/core-va-merchanthosted</item>
+                                                                    <item name="methods" xsi:type="array">
+									<item name="bni_va_merchanthosted" xsi:type="array">
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                     </item>
