@@ -116,6 +116,7 @@ class Request extends \Magento\Framework\App\Action\Action {
             $configCode = $this->config->getRelationPaymentChannel($order->getPayment()->getMethod());
 
             $billingData = $order->getBillingAddress();
+            $shippingData = $order->getShippingAddress();
             $config = $this->config->getAllConfig();
 
             if($order->getPayment()->getMethod() == \Doku\Hosted\Model\Payment\DokuHostedPayment::CODE && $config['payment'][$order->getPayment()->getMethod()]['is_opt_dropdown']) {
@@ -224,22 +225,20 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'EMAIL' => $billingData->getEmail(),
                 'BASKET' => $basket,
                 'MOBILEPHONE' => $billingData->getTelephone(),
-                'SHIPPING_ZIPCODE' => $billingData->getPostcode(),
-                'SHIPPING_CITY' => $billingData->getCity(),
-                'SHIPPING_ADDRESS' => $billingData->getStreet(),
-                'SHIPPING_COUNTRY' => $billingData->getCountryId()
+                'HOMEPHONE' => $billingData->getTelephone(),
+                'WORKPHONE' => $billingData->getTelephone(),
+                'SHIPPING_ZIPCODE' => $shippingData->getPostcode(),
+                'ZIPCODE' => $billingData->getPostcode(),
+                'SHIPPING_CITY' => $shippingData->getCity(),
+                'CITY' => $billingData->getCity(),
+                'SHIPPING_ADDRESS' => $shippingData->getStreet(),
+                'ADDRESS' => $billingData->getStreet(),
+                'SHIPPING_COUNTRY' => $shippingData->getCountryId(),
+                'COUNTRY' => $billingData->getCountryId()
             );
 
             if($configCode != "0"){
                $result['PAYMENTCHANNEL'] = $configCode;
-
-               if($result['PAYMENTCHANNEL'] == "37"){
-                    $result['SHIPPING_ZIPCODE'] = $billingData->getPostcode();
-                    $result['SHIPPING_CITY'] = $billingData->getCity();
-                    $result['SHIPPING_ADDRESS'] = $billingData->getStreet();
-                    $result['SHIPPING_COUNTRY'] = $billingData->getCountryId();
-               }
-
 
                if($order->getPayment()->getMethod() == \Doku\Hosted\Model\Payment\CreditCardAuthorizationHosted::CODE){
                     $result['PAYMENTTYPE'] = 'AUTHORIZATION';
