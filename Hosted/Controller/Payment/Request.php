@@ -268,6 +268,7 @@ class Request extends \Magento\Framework\App\Action\Action {
 
                 // recurring
                 if ($result['PAYMENTCHANNEL'] == "17" && $order->getCustomerId()) {
+                    $result['CHAINMERCHANT'] = "";    // recurring must send chainmerchant empty
                     $historyTrans = $this->resourceConnection->getConnection()->fetchRow("SELECT * FROM doku_transaction where customer_email = '".$billingData->getEmail()."' ORDER BY id DESC LIMIT 1");
                     $billNumber = 1;
                     if(isset($historyTrans['recurring_billnumber']) && !empty($historyTrans['recurring_billnumber'])){
@@ -288,7 +289,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                     if (isset($recurRegisSubsribe['customer_id']) && !empty($recurRegisSubsribe['customer_id'])) {
                         $result['URL'] = $this->generalConfiguration->getURLRecurringUpdate();
                         $result['WORDS'] = sha1(
-                            $mallId . $chainMerchant . $result['BILLNUMBER'] . $result['CUSTOMERID'] . $sharedId
+                            $mallId . $result['CHAINMERCHANT'] . $result['BILLNUMBER'] . $result['CUSTOMERID'] . $sharedId
                         );
                         unset($result['BASKET']);
                         unset($result['NAME']);
