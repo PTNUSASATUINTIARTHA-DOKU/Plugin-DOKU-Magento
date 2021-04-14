@@ -1,6 +1,6 @@
 <?php
 
-namespace Doku\Core\Controller\Service;
+namespace Doku\Core\Controller\Recurring;
 
 use Magento\Sales\Model\Order;
 use Psr\Log\LoggerInterface;
@@ -15,7 +15,7 @@ use Magento\Framework\App\CsrfAwareActionInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 use Magento\Framework\App\RequestInterface;
 
-class Redirect extends \Magento\Framework\App\Action\Action implements CsrfAwareActionInterface {
+class Updateredirect extends \Magento\Framework\App\Action\Action implements CsrfAwareActionInterface {
 
     protected $order;
     protected $logger;

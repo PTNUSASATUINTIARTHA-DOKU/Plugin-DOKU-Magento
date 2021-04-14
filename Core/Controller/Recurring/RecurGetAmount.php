@@ -1,5 +1,5 @@
 <?php
-namespace Doku\Core\Controller\Service;
+namespace Doku\Core\Controller\Recurring;
 
 use \Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResourceConnection;
@@ -11,7 +11,7 @@ use Doku\Core\Model\GeneralConfiguration;
 use Doku\Core\Helper\Data;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 
-class Recuramount extends \Magento\Framework\App\Action\Action {
+class RecurGetAmount extends \Magento\Framework\App\Action\Action {
 
     protected $resourceConnection;
     protected $order;

@@ -116,6 +116,7 @@ class Request extends \Magento\Framework\App\Action\Action {
             $configCode = $this->config->getRelationPaymentChannel($order->getPayment()->getMethod());
 
             $billingData = $order->getBillingAddress();
+            $shippingData = $order->getShippingAddress();
             $config = $this->config->getAllConfig();
 
             if($order->getPayment()->getMethod() == \Doku\Hosted\Model\Payment\DokuHostedPayment::CODE && $config['payment'][$order->getPayment()->getMethod()]['is_opt_dropdown']) {
@@ -152,7 +153,7 @@ class Request extends \Magento\Framework\App\Action\Action {
 
             $buffGrandTotal = $grandTotal - $totalAdminFeeDisc['total_discount'];
 
-            $grandTotal = $buffGrandTotal < 10000 ? 10000.00 : number_format($buffGrandTotal, 2, ".", "");
+            $grandTotal = number_format($buffGrandTotal, 2, ".", "");
 
             $mallId = $config['payment']['core']['mall_id'];
             $sharedId = $this->config->getSharedKey();
@@ -224,22 +225,20 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'EMAIL' => $billingData->getEmail(),
                 'BASKET' => $basket,
                 'MOBILEPHONE' => $billingData->getTelephone(),
-                'SHIPPING_ZIPCODE' => $billingData->getPostcode(),
-                'SHIPPING_CITY' => $billingData->getCity(),
-                'SHIPPING_ADDRESS' => $billingData->getStreet(),
-                'SHIPPING_COUNTRY' => $billingData->getCountryId()
+                'HOMEPHONE' => $billingData->getTelephone(),
+                'WORKPHONE' => $billingData->getTelephone(),
+                'SHIPPING_ZIPCODE' => $shippingData->getPostcode(),
+                'ZIPCODE' => $billingData->getPostcode(),
+                'SHIPPING_CITY' => $shippingData->getCity(),
+                'CITY' => $billingData->getCity(),
+                'SHIPPING_ADDRESS' => $shippingData->getStreet(),
+                'ADDRESS' => $billingData->getStreet(),
+                'SHIPPING_COUNTRY' => $shippingData->getCountryId(),
+                'COUNTRY' => $billingData->getCountryId()
             );
 
             if($configCode != "0"){
                $result['PAYMENTCHANNEL'] = $configCode;
-
-               if($result['PAYMENTCHANNEL'] == "37"){
-                    $result['SHIPPING_ZIPCODE'] = $billingData->getPostcode();
-                    $result['SHIPPING_CITY'] = $billingData->getCity();
-                    $result['SHIPPING_ADDRESS'] = $billingData->getStreet();
-                    $result['SHIPPING_COUNTRY'] = $billingData->getCountryId();
-               }
-
 
                if($order->getPayment()->getMethod() == \Doku\Hosted\Model\Payment\CreditCardAuthorizationHosted::CODE){
                     $result['PAYMENTTYPE'] = 'AUTHORIZATION';
@@ -268,6 +267,7 @@ class Request extends \Magento\Framework\App\Action\Action {
 
                 // recurring
                 if ($result['PAYMENTCHANNEL'] == "17" && $order->getCustomerId()) {
+                    $result['CHAINMERCHANT'] = "";    // recurring must send chainmerchant empty
                     $historyTrans = $this->resourceConnection->getConnection()->fetchRow("SELECT * FROM doku_transaction where customer_email = '".$billingData->getEmail()."' ORDER BY id DESC LIMIT 1");
                     $billNumber = 1;
                     if(isset($historyTrans['recurring_billnumber']) && !empty($historyTrans['recurring_billnumber'])){
@@ -288,7 +288,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                     if (isset($recurRegisSubsribe['customer_id']) && !empty($recurRegisSubsribe['customer_id'])) {
                         $result['URL'] = $this->generalConfiguration->getURLRecurringUpdate();
                         $result['WORDS'] = sha1(
-                            $mallId . $chainMerchant . $result['BILLNUMBER'] . $result['CUSTOMERID'] . $sharedId
+                            $mallId . $result['CHAINMERCHANT'] . $result['BILLNUMBER'] . $result['CUSTOMERID'] . $sharedId
                         );
                         unset($result['BASKET']);
                         unset($result['NAME']);
@@ -303,7 +303,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                         $result['URL'] = $this->generalConfiguration->getURLRecurringReg();
                         $result['WORDS'] = sha1($mallId . $chainMerchant . $result['BILLNUMBER'] . $result['CUSTOMERID'] . $result['AMOUNT'] . $sharedId);
                         $result['BILLDETAIL'] = $productInfo;
-                        $result['BILLTYPE'] = "S"; // S = Shopping, I = Installment, D = Donation, P = Payment
+                        $result['BILLTYPE'] = "P"; // S = Shopping, I = Installment, D = Donation, P = Payment
                         $recurringStartDate = $this->_timezoneInterface->date()->format('Ymd');
                         $dtRecurringStartDate = $this->_timezoneInterface->date()->format('Y-m-d');
                         $result['STARTDATE'] = $recurringStartDate;
@@ -315,7 +315,9 @@ class Request extends \Magento\Framework\App\Action\Action {
                         $result['EXECUTEMONTH'] = $this->generalConfiguration->getRecurringExecutemonth();
                         $result['FLATSTATUS'] = $this->generalConfiguration->getRecurringFlatstatus() ? 'TRUE' : 'FALSE';
                         if ($this->generalConfiguration->getRecurringRegisteramount()) {
-                            $result['REGISTERAMOUNT'] = $this->generalConfiguration->getRecurringRegisteramount();
+                            $result['REGISTERAMOUNT'] = number_format($this->generalConfiguration->getRecurringRegisteramount(), 2, ".", "");
+                        } else {
+                            $result['REGISTERAMOUNT'] = '10000.00';
                         }
                     }
                 }
@@ -388,6 +390,7 @@ class Request extends \Magento\Framework\App\Action\Action {
 
         if ($configCode == "17" && $order->getCustomerId()) {
             $recurringModel = $this->_recurringFactory->create();
+            $flatStatus = ($result['FLATSTATUS']) ? 1 : 0; 
             $recurringData = array(
                 'customer_id' => $result['CUSTOMERID'],
                 'status_type' => 'G', //registration
@@ -399,7 +402,7 @@ class Request extends \Magento\Framework\App\Action\Action {
                 'execute_type' => $result['EXECUTETYPE'],
                 'execute_date' => $result['EXECUTEDATE'],
                 'execute_month' => $result['EXECUTEMONTH'],
-                'flat_status' => $result['FLATSTATUS'],
+                'flat_status' => $flatStatus,
                 'subscription_status' => 1
             );
             $recurringModel->setData($recurringData);

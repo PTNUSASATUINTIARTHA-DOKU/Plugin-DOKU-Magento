@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <doku_general_config>
+            <general>
+                <chain_id_production>NA</chain_id_production>
+                <chain_id_development>NA</chain_id_development>
+                <expiry>360</expiry>
+            </general>
+        </doku_general_config>
+    </default>
+</config>

@@ -21,11 +21,11 @@
                 </field>
                 <field id="chain_id_production" translate="label" type="text" sortOrder="102" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Chain ID (Production)</label>
-                    <comment>*Required Field</comment>
+                    <comment>*Required Field. If you set this field with empty value, the chain ID will be set with default value NA</comment>
                 </field>
                 <field id="chain_id_development" translate="label" type="text" sortOrder="103" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Chain ID (Development)</label>
-                    <comment>*Required Field</comment>
+                    <comment>*Required Field. If you set this field with empty value, the chain ID will be set with default value NA</comment>
                 </field>
                 <field id="shared_key_production" translate="label" type="text" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Shared Key (Production)</label>
@@ -55,7 +55,7 @@
                     <label>BCC Email Address</label>
                 </field>
                 <field id="notify_url" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Notfy URL</label>
+                    <label>Notify URL</label>
                     <frontend_model>Doku\Core\Block\System\Config\Form\Field\Attribute</frontend_model>
                 </field>
                 <field id="identify_url" translate="label" type="text" sortOrder="111" showInDefault="1" showInWebsite="1" showInStore="1">
